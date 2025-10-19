@@ -1,0 +1,80 @@
+/* src/components/Slide2.module.css */
+
+.slideContainer {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a7b 100%);
+  padding: 40px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.title {
+  color: #00b2e3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  animation: slideInLeft 1s ease-out;
+  text-align: center;
+}
+
+.contentBox {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1.5s ease-out;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.description {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.featureList {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  list-style: none;
+  padding: 0;
+}
+
+.feature {
+  padding: 10px 0;
+  padding-left: 30px;
+  position: relative;
+}
+
+.feature::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #00b2e3;
+  font-weight: bold;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

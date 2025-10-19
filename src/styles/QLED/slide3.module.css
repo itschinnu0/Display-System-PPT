@@ -1,0 +1,95 @@
+/* src/components/Slide3.module.css */
+
+.slideContainer {
+  background: #0a2540;
+  padding: 40px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.title {
+  color: #00d4ff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  animation: zoomIn 1s ease-out;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(0, 212, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #00d4ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInScale 0.8s ease-out backwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.cardTitle {
+  color: #00d4ff;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.cardValue {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}
