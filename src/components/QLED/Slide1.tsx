@@ -1,47 +1,46 @@
-import styles from "../../styles/QLED/slide1.module.css";
+// src/components/Slide1.jsx
+import '../../styles/QLED/slide1.css'; // Using regular CSS instead of CSS modules for exact replication
 
-const Slide1 = () => {
+export function Slide1() {
   return (
-    <section data-slide="1" className={styles.slideContainer}>
-      <div className={styles.backgroundOverlay}></div>
-      <div className={`${styles.techCircle} ${styles.techCircle1}`}></div>
-      <div className={`${styles.techCircle} ${styles.techCircle2}`}></div>
+    <section data-slide="1">
+      <div className="slide-container">
+        <div className="background-overlay"></div>
+        <div className="tech-circle tech-circle-1"></div>
+        <div className="tech-circle tech-circle-2"></div>
 
-      {/* Header section with title */}
-      <div className={styles.contentWrapper}>
-        <h1 className={styles.titleText}>
-          <span className={styles.qledAccent}>QLED</span> Display Technology
-        </h1>
+        {/* Header section with title */}
+        <div className="flex flex-col items-center justify-center px-6 text-center">
+          <h1 className="title-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight">
+            <span className="qled-accent">QLED</span> Display Technology
+          </h1>
 
-        <p className={styles.subtitleText}>
-          A professional exploration of quantum dot technology, performance
-          advantages, and innovation trajectory
-        </p>
+          <p className="subtitle-text text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-10">
+            A professional exploration of quantum dot technology, performance
+            advantages, and innovation trajectory
+          </p>
+        </div>
+
+        {/* Visual section with image */}
+        <div className="flex justify-center">
+          <img
+            alt="QLED Quantum Dot Display Architecture"
+            className="quantum-dot-image rounded-lg border border-blue-400"
+            src="https://www.yankodesign.com/images/design_news/2024/02/top-10-game-changing-materials-that-are-shaping-the-design-and-technology-world-in-2024/game_changing_materials_2024_3.jpg"
+          />
+        </div>
       </div>
 
-      {/* Visual section with image */}
-      <div className={styles.imageWrapper}>
-        <img
-          alt="QLED Quantum Dot Display Architecture"
-          className={styles.quantumDotImage}
-          src="https://www.yankodesign.com/images/design_news/2024/02/top-10-game-changing-materials-that-are-shaping-the-design-and-technology-world-in-2024/game_changing_materials_2024_3.jpg"
-        />
-      </div>
-
-      {/* Speaker Notes - Press 'S' to view */}
+      {/* Speaker Notes */}
       <aside className="notes">
         <h3>Speaker Notes for Slide 1:</h3>
         <ul>
           <li>Welcome the audience</li>
           <li>Introduce QLED technology overview</li>
-          <li>
-            Mention we'll cover quantum dots, performance, and innovations
-          </li>
+          <li>Mention quantum dots, performance, and innovations</li>
           <li>Estimated time: 2 minutes</li>
         </ul>
       </aside>
     </section>
   );
-};
-
-export { Slide1 };
+}

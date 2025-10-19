@@ -1,7 +1,9 @@
 /* src/App.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
 
+/* Global reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -17,4 +19,26 @@ html, body, #root {
 .app {
   width: 100%;
   height: 100%;
+}
+
+/* Reveal.js container adjustments */
+.reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+/* Remove default padding/margin from sections */
+.reveal .slides section {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure speaker notes are hidden */
+.reveal aside.notes {
+  display: none;
 }

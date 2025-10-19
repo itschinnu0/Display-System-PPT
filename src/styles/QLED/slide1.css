@@ -1,0 +1,126 @@
+/* src/components/Slide1.css */
+
+/* Scope all styles to this slide using data-slide attribute */
+section[data-slide="1"] {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+section[data-slide="1"] .slide-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #051c2c;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section[data-slide="1"] .title-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  animation: fadeInDown 1.2s ease-out forwards;
+}
+
+section[data-slide="1"] .subtitle-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+section[data-slide="1"] .qled-accent {
+  color: #00b2e3;
+}
+
+section[data-slide="1"] .background-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(5, 28, 44, 0.85);
+  z-index: 0;
+}
+
+section[data-slide="1"] .tech-circle {
+  position: absolute;
+  border: 1px solid rgba(0, 178, 227, 0.3);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+section[data-slide="1"] .tech-circle-1 {
+  width: 30vw;
+  height: 30vw;
+  right: -10vw;
+  top: -10vw;
+  animation: pulse 8s infinite alternate;
+}
+
+section[data-slide="1"] .tech-circle-2 {
+  width: 25vw;
+  height: 25vw;
+  left: -8vw;
+  bottom: -10vw;
+  animation: pulse 12s infinite alternate-reverse;
+}
+
+section[data-slide="1"] .quantum-dot-image {
+  animation: fadeIn 1.5s ease-out forwards;
+  box-shadow: 0 4px 20px rgba(0, 178, 227, 0.2);
+  max-height: 30vh;
+  object-fit: contain;
+  width: auto;
+}
+
+/* Animations for Slide 1 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
