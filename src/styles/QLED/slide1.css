@@ -1,6 +1,3 @@
-/* src/components/Slide1.css */
-
-/* Scope all styles to this slide using data-slide attribute */
 section[data-slide="1"] {
   width: 100vw !important;
   height: 100vh !important;
