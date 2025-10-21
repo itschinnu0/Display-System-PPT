@@ -1,7 +1,6 @@
-// src/components/Slide1.jsx
-import "../../styles/QLED/slide2.css"; // Using regular CSS instead of CSS modules for exact replication
+import "../../styles/QLED/slide2.css";
 
-export function Slide2() {
+export function QLEDSlide2() {
   return (
     <section data-slide="2">
       <div className="slide-container flex flex-col">

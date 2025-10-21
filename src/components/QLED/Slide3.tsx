@@ -1,6 +1,6 @@
 import "../../styles/QLED/slide3.css";
 
-export function Slide3() {
+export function QLEDSlide3() {
   return (
     <section data-slide="3">
       <div className="slide-container flex flex-col">
