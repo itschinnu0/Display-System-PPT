@@ -18,11 +18,25 @@ import { OLEDSlide3 } from "./components/OLED/Slide3";
 import { OLEDSlide4 } from "./components/OLED/Slide4";
 import { OLEDSlide5 } from "./components/OLED/Slide5";
 import { OLEDSlide6 } from "./components/OLED/Slide6";
+import { LCDSlide1 } from "./components/LCD/Slide1";
+import { LCDSlide2 } from "./components/LCD/Slide2";
+import { LCDSlide3 } from "./components/LCD/Slide3";
+import { LCDSlide4 } from "./components/LCD/Slide4";
+import { LCDSlide5 } from "./components/LCD/Slide5";
+import { LCDSlide6 } from "./components/LCD/Slide6";
+import { LCDSlide7 } from "./components/LCD/Slide7";
 
 function App() {
   return (
     <div className="app">
       <RevealProvider>
+        <LCDSlide1 />
+        <LCDSlide2 />
+        <LCDSlide3 />
+        <LCDSlide4 />
+        <LCDSlide5 />
+        <LCDSlide6 />
+        <LCDSlide7 />
         <OLEDSlide1 />
         <OLEDSlide2 />
         <OLEDSlide3 />

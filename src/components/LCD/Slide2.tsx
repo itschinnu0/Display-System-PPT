@@ -1,6 +1,6 @@
-import "../../styles/OLED/slide2.css";
+import "../../styles/LCD/slide2.css";
 
-export function OLEDSlide2() {
+export function LCDSlide2() {
   return (
     <section data-slide="2">
       <div className="slide-container flex flex-col">
@@ -10,12 +10,11 @@ export function OLEDSlide2() {
 
         <div className="px-16 pt-12">
           <h1 className="section-title text-4xl mb-2">
-            Executive Summary:{" "}
-            <span className="qled-accent">The OLED Edge</span>
+            Executive Summary: <span className="qled-accent">The LCD Edge</span>
           </h1>
           <p className="section-subtitle text-lg text-gray-300 mb-8">
-            QLED (Quantum Dot Light Emitting Diode) display technology combines
-            advanced physics with revolutionary manufacturing
+            LCD (Liquid Crystal Display) display technology is a classic and
+            versatile solution for high-quality image and text presentation.
           </p>
         </div>
 
@@ -24,34 +23,33 @@ export function OLEDSlide2() {
             <div className="advantage-card p-5 rounded-lg delay-100">
               <div className="flex items-start mb-2">
                 {/* <i className="advantage-icon fas fa-lightbulb-o text-2xl mr-3 mt-1"></i> */}
-                <h3 className="text-xl font-semibold">What is OLED?</h3>
               </div>
               <p className="text-gray-300">
-                OLED stands for Organic Light-Emitting Diode. It's a
-                revolutionary display technology that uses organic compounds to
-                emit light when electric current passes through, creating
-                stunning visual experiences with superior image quality.
+                Liquid crystals are extraordinary materials that possess
+                properties conventional liquids and solid crystals.
               </p>
             </div>
             <div className="advantage-card p-5 rounded-lg delay-200">
-              <div className="flex items-start mb-2">
-                <i className="advantage-icon fas fa-tablet text-2xl mr-3 mt-1"></i>
-                <h3 className="text-xl font-semibold">Modern Applications</h3>
-              </div>
+              <div className="flex items-start mb-2"></div>
               <p className="text-gray-300">
-                Widely used in smartphones, TVs, monitors, and wearable devices
-                for their exceptional color accuracy and contrast ratios.
+                Their molecules can flow like a liquid but simultaneously
+                maintain some ordered structure similar to crystals.
               </p>
             </div>
             <div className="advantage-card p-5 rounded-lg delay-300">
-              <div className="flex items-start mb-2">
-                <i className="advantage-icon fas fa-lightbulb-o text-2xl mr-3 mt-1"></i>
-                <h3 className="text-xl font-semibold">Key Innovation</h3>
-              </div>
+              <div className="flex items-start mb-2"></div>
               <p className="text-gray-300">
-                Each pixel generates its own light, enabling true blacks,
-                infinite contrast, and energy effciency unmatched by traditional
-                displays.
+                What makes liquid crystals particularly valuable in modern
+                technology is their high sensitivity to temperature changes,
+                electric field!, and magnetic fields.
+              </p>
+            </div>
+            <div className="advantage-card p-5 rounded-lg delay-400">
+              <div className="flex items-start mb-2"></div>
+              <p className="text-gray-300">
+                This unique combination of properties makes them ideal
+                candidates for various applications, particularly in display
+                technologies.
               </p>
             </div>
           </div>

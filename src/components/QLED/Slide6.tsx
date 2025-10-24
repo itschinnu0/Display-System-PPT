@@ -1,167 +1,95 @@
-import { useEffect, useRef } from "react";
-import { Chart } from "chart.js/auto";
+import { Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
 import "../../styles/QLED/slide6.css";
 
+// CRITICAL: Must register ALL components you use
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 export function QLEDSlide6() {
-  const chartRef = useRef<HTMLCanvasElement>(null);
-  const chartInstanceRef = useRef<Chart | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const initChart = () => {
-      if (!chartRef.current || !containerRef.current) {
-        console.log("Refs not ready");
-        return false;
+  const data = {
+    labels: [
+      "Peak Brightness",
+      "Color Accuracy",
+      "Black Levels",
+      "Energy Efficiency",
+      "View Angles",
+      "Burn Resistance",
+      "Cost Effectiveness",
+      "Lifespan",
+      "Gaming Performance",
+    ],
+    datasets: [
+      {
+        label: 'QLED',
+        data: [9, 8, 7, 8, 6, 10, 8, 9, 7],
+        backgroundColor: '#00b2e3',
+        borderWidth: 0,
+      },
+      {
+        label: 'OLED',
+        data: [7, 9, 10, 9, 9, 6, 6, 7, 9],
+        backgroundColor: '#e3506e',
+        borderWidth: 0,
       }
+    ]
+  };
 
-      // Force container to have dimensions
-      const container = containerRef.current;
-      const width = container.offsetWidth;
-      const height = container.offsetHeight;
-
-      console.log("Container dimensions:", width, height);
-
-      if (width === 0 || height === 0) {
-        console.log("Container has zero dimensions, waiting...");
-        return false;
-      }
-
-      const ctx = chartRef.current.getContext("2d");
-      if (!ctx) {
-        console.log("No context");
-        return false;
-      }
-
-      // Destroy existing chart
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.destroy();
-        chartInstanceRef.current = null;
-      }
-
-      console.log("Creating chart now...");
-
-      chartInstanceRef.current = new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: [
-            "Peak Brightness",
-            "Color Accuracy",
-            "Black Levels",
-            "Energy Efficiency",
-            "View Angles",
-            "Burn Resistance",
-            "Cost Effectiveness",
-            "Lifespan",
-            "Gaming Performance",
-          ],
-          datasets: [
-            {
-              label: "QLED",
-              data: [9, 8, 7, 8, 6, 10, 8, 9, 7],
-              backgroundColor: "#00b2e3",
-              borderWidth: 0,
-            },
-            {
-              label: "OLED",
-              data: [7, 9, 10, 9, 9, 6, 6, 7, 9],
-              backgroundColor: "#e3506e",
-              borderWidth: 0,
-            },
-          ],
+  const options = {
+    indexAxis: 'y' as const,
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        min: 0,
+        max: 10,
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)",
         },
-        options: {
-          indexAxis: "y",
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            x: {
-              min: 0,
-              max: 10,
-              grid: {
-                color: "rgba(255, 255, 255, 0.1)",
-              },
-              ticks: {
-                color: "rgba(255, 255, 255, 0.7)",
-              },
-            },
-            y: {
-              grid: {
-                display: false,
-              },
-              ticks: {
-                color: "rgba(255, 255, 255, 0.7)",
-              },
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-            },
-            tooltip: {
-              callbacks: {
-                label: function (context) {
-                  return context.dataset.label + ": " + context.parsed.x + "/10";
-                },
-              },
-            },
-          },
-          animation: {
-            duration: 1500,
-            easing: "easeOutQuart",
+        ticks: {
+          color: "rgba(255, 255, 255, 0.7)",
+        },
+      },
+      y: {
+        grid: {
+          display: false,
+        },
+        ticks: {
+          color: "rgba(255, 255, 255, 0.7)",
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        callbacks: {
+          label: function (context: any) {
+            return context.dataset.label + ": " + context.parsed.x + "/10";
           },
         },
-      });
-
-      console.log("Chart created:", chartInstanceRef.current);
-      return true;
-    };
-
-    // Try multiple times with delays
-    const attempts = [100, 300, 500, 1000, 1500, 2000];
-    const timeouts: ReturnType<typeof setTimeout>[] = [];
-
-    attempts.forEach((delay) => {
-      const timeout = setTimeout(() => {
-        if (!chartInstanceRef.current) {
-          console.log(`Attempt at ${delay}ms`);
-          initChart();
-        }
-      }, delay);
-      timeouts.push(timeout);
-    });
-
-    // Listen for reveal.js events if available
-    const handleSlideChanged = () => {
-      console.log("Slide changed event");
-      setTimeout(() => {
-        if (!chartInstanceRef.current) {
-          initChart();
-        }
-      }, 100);
-    };
-
-    // Check if Reveal is available
-    const checkReveal = setInterval(() => {
-      const revealElement = document.querySelector('.reveal');
-      if (revealElement) {
-        revealElement.addEventListener('slidechanged', handleSlideChanged as EventListener);
-        clearInterval(checkReveal);
-      }
-    }, 100);
-
-    return () => {
-      timeouts.forEach((t) => clearTimeout(t));
-      clearInterval(checkReveal);
-      const revealElement = document.querySelector('.reveal');
-      if (revealElement) {
-        revealElement.removeEventListener('slidechanged', handleSlideChanged as EventListener);
-      }
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.destroy();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
+      },
+    },
+    animation: {
+      duration: 1500,
+      easing: 'easeOutQuart' as const,
+    },
+  };
 
   return (
     <section data-slide="6">
@@ -170,6 +98,7 @@ export function QLEDSlide6() {
         <div className="tech-circle tech-circle-1"></div>
         <div className="tech-circle tech-circle-2"></div>
 
+        {/* Header section with title */}
         <div className="px-16 pt-7">
           <h1 className="content-title text-4xl mb-2">
             <span className="qled-accent">QLED</span> vs{" "}
@@ -177,6 +106,7 @@ export function QLEDSlide6() {
           </h1>
         </div>
 
+        {/* Chart section */}
         <div className="flex-grow px-16 py-2">
           <div className="flex justify-center items-center mb-4">
             <div className="chart-legend-item">
@@ -189,8 +119,8 @@ export function QLEDSlide6() {
             </div>
           </div>
 
-          <div className="chart-container" ref={containerRef}>
-            <canvas ref={chartRef}></canvas>
+          <div className="chart-container">
+            <Bar data={data} options={options} />
           </div>
 
           <div className="grid grid-cols-2 gap-8 mt-6">
@@ -221,6 +151,7 @@ export function QLEDSlide6() {
           </div>
         </div>
 
+        {/* Footer section */}
         <div className="px-16 py-4 mb-2">
           <p className="content-subtitle text-sm text-gray-400 text-center">
             Each technology has distinct advantages, making them suitable for

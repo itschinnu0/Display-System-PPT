@@ -83,9 +83,28 @@ const RevealProvider = ({ children }: React.PropsWithChildren) => {
     if (!slide) return;
 
     const slideContainer = slide.querySelector(".slide-container");
-    if (slideContainer) {
-      const clone = slideContainer.cloneNode(true);
+    if (!slideContainer) return;
 
+    // Check if this slide contains a Chart.js canvas
+    const hasChart = slideContainer.querySelector(".chart-container canvas");
+
+    if (hasChart) {
+
+      const animatedElements = slideContainer.querySelectorAll(
+        ".content-title, .content-subtitle, .comparison-item, .tech-circle, .background-overlay, .chart-container canvas"
+      );
+
+      animatedElements.forEach((element: any) => {
+        const animationName = window.getComputedStyle(element).animationName;
+
+        if (animationName && animationName !== "none") {
+          element.style.animation = "none";
+          element.offsetHeight;
+          element.style.animation = "";
+        }
+      });
+    } else {
+      const clone = slideContainer.cloneNode(true);
       slideContainer.parentNode.replaceChild(clone, slideContainer);
     }
   };

@@ -1,0 +1,206 @@
+section[data-slide="6"] .slide-container {
+  max-width: 1800px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section[data-slide="6"] .slide-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #00d4ff, #00ffff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  animation: slideInDown 0.8s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section[data-slide="6"] .content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+section[data-slide="6"] .content-box {
+  background: rgba(20, 40, 70, 0.6);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+  animation: slideInUp 0.8s ease-out backwards;
+}
+
+section[data-slide="6"] .content-box:nth-child(1) {
+  animation-delay: 0.2s;
+}
+section[data-slide="6"] .content-box:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section[data-slide="6"] .box-header {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #00d4ff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+section[data-slide="6"] .visual-demo {
+  background: rgba(10, 30, 60, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 15px;
+  height: 200px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+section[data-slide="6"] .molecules-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+section[data-slide="6"] .molecule {
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(180deg, #00d4ff, #0080ff);
+  border-radius: 3px;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+section[data-slide="6"] .twisted .molecule {
+  animation: twist 3s ease-in-out infinite;
+}
+
+section[data-slide="6"] .aligned .molecule {
+  animation: align 3s ease-in-out infinite;
+}
+
+@keyframes twist {
+  0%,
+  100% {
+    transform: rotate(-20deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(20deg);
+    opacity: 1;
+  }
+}
+
+@keyframes align {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(0deg);
+    opacity: 0.8;
+  }
+}
+
+section[data-slide="6"] .molecule:nth-child(1) {
+  animation-delay: 0s;
+}
+section[data-slide="6"] .molecule:nth-child(2) {
+  animation-delay: 0.1s;
+}
+section[data-slide="6"] .molecule:nth-child(3) {
+  animation-delay: 0.2s;
+}
+section[data-slide="6"] .molecule:nth-child(4) {
+  animation-delay: 0.3s;
+}
+section[data-slide="6"] .molecule:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+section[data-slide="6"] .state-label {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 212, 255, 0.2);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #00d4ff;
+  border: 1px solid rgba(0, 212, 255, 0.4);
+}
+
+section[data-slide="6"] .content-box p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #b8d9f0;
+  margin-bottom: 15px;
+}
+
+section[data-slide="6"] .content-box p:last-child {
+  margin-bottom: 0;
+}
+
+section[data-slide="6"] .full-width-section {
+  background: rgba(20, 40, 70, 0.6);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 20px;
+  padding: 35px 45px;
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+  animation: slideInUp 0.8s ease-out 0.6s backwards;
+}
+
+section[data-slide="6"] .highlight-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 100, 150, 0.3),
+    rgba(0, 150, 200, 0.3)
+  );
+  padding: 25px 35px;
+  border-radius: 12px;
+  border-left: 4px solid #00d4ff;
+}

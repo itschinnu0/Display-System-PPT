@@ -1,3 +1,4 @@
+/* Base section styling */
 section[data-slide="6"] {
   width: 100vw !important;
   height: 100vh !important;
@@ -28,6 +29,7 @@ section[data-slide="6"] .flex-grow {
   flex-direction: column;
 }
 
+/* Chart container styling */
 section[data-slide="6"] .chart-container {
   width: 100%;
   height: 360px !important;
@@ -44,6 +46,7 @@ section[data-slide="6"] .chart-container canvas {
   width: 100% !important;
 }
 
+/* Typography */
 section[data-slide="6"] .content-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -56,6 +59,7 @@ section[data-slide="6"] .content-subtitle {
   animation: fadeInUp 0.8s ease-out;
 }
 
+/* Color accents */
 section[data-slide="6"] .qled-accent {
   color: #00b2e3;
 }
@@ -64,6 +68,7 @@ section[data-slide="6"] .oled-accent {
   color: #e3506e;
 }
 
+/* Background elements */
 section[data-slide="6"] .background-overlay {
   position: absolute;
   top: 0;
@@ -97,10 +102,12 @@ section[data-slide="6"] .tech-circle-2 {
   animation: pulse 12s infinite alternate-reverse;
 }
 
+/* Comparison items */
 section[data-slide="6"] .comparison-item {
   animation: slideInRight 0.8s ease-out;
 }
 
+/* Chart legend */
 section[data-slide="6"] .chart-legend-item {
   display: flex;
   align-items: center;
@@ -122,6 +129,7 @@ section[data-slide="6"] .oled-color {
   background-color: #e3506e;
 }
 
+/* Animations */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -179,6 +187,7 @@ section[data-slide="6"] .oled-color {
   }
 }
 
+/* Animation delays */
 section[data-slide="6"] .delay-100 {
   animation-delay: 0.1s;
 }
@@ -189,4 +198,29 @@ section[data-slide="6"] .delay-200 {
 
 section[data-slide="6"] .delay-300 {
   animation-delay: 0.3s;
+}
+
+/* Comparison table (if needed later) */
+section[data-slide="6"] .comparison-table {
+  width: 100%;
+  animation: fadeIn 1s ease-out;
+}
+
+section[data-slide="6"] .comparison-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+section[data-slide="6"] .winner-qled {
+  color: #00b2e3;
+  font-weight: 600;
+}
+
+section[data-slide="6"] .winner-oled {
+  color: #e3506e;
+  font-weight: 600;
+}
+
+section[data-slide="6"] .present .chart-container {
+  animation: fadeIn 1.2s ease-out;
 }
