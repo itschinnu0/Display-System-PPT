@@ -16,8 +16,6 @@ const RevealProvider = ({ children }: React.PropsWithChildren) => {
   useEffect(() => {
     if (deckRef.current) return;
 
-    // document.documentElement.classList.add("reveal-full-page");
-
     deckRef.current = new Reveal(deckDivRef.current!, {
       // Display
       controls: "speaker-only",
@@ -35,7 +33,7 @@ const RevealProvider = ({ children }: React.PropsWithChildren) => {
       // Transitions
       transition: "fade",
       transitionSpeed: "default",
-      backgroundTransition: "fade",
+      backgroundTransition: "slide",
 
       // Layout
       disableLayout: true,
