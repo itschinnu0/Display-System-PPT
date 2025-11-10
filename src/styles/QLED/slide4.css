@@ -177,15 +177,15 @@ section[data-slide="4"] .delay-500 {
 }
 section[data-slide="4"] .delay-600 {
   animation-delay: 0.6s;
-}
+} 
 
-.quantum-dot-size {
+section[data-slide="4"] .quantum-dot-size {
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-top: 20px;
 }
-.dot {
+section[data-slide="4"] .dot {
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -194,19 +194,19 @@ section[data-slide="4"] .delay-600 {
   font-weight: bold;
   animation: fadeIn 1s ease-out;
 }
-.dot-small {
+section[data-slide="4"] .dot-small {
   background-color: #4d84ff;
   width: 40px;
   height: 40px;
   animation: pulse-blue 3s infinite alternate;
 }
-.dot-medium {
+section[data-slide="4"] .dot-medium {
   background-color: #50c878;
   width: 60px;
   height: 60px;
   animation: pulse-green 3s infinite alternate;
 }
-.dot-large {
+section[data-slide="4"] .dot-large {
   background-color: #ff5252;
   width: 80px;
   height: 80px;
