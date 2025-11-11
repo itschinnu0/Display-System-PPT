@@ -1,31 +1,168 @@
-section[data-slide="6"] .slide-container {
-  max-width: 1800px;
-  width: 100%;
-  animation: fadeIn 0.6s ease-in;
+section[data-slide="6"]  {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
-@keyframes fadeIn {
+section[data-slide="6"]  .slide-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #051c2c;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+section[data-slide="6"]  .section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  animation: fadeInDown 1.2s ease-out;
+}
+
+section[data-slide="6"]  .section-subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  animation: fadeInUp 0.8s ease-out;
+}
+section[data-slide="6"]  .qled-accent {
+  color: #00b2e3;
+}
+section[data-slide="6"]  .background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 28, 44, 0.85);
+  z-index: -1;
+}
+section[data-slide="6"]  .tech-circle {
+  position: absolute;
+  border: 1px solid rgba(0, 178, 227, 0.3);
+  border-radius: 50%;
+  z-index: -1;
+}
+section[data-slide="6"]  .tech-circle-1 {
+  width: 400px;
+  height: 400px;
+  right: -100px;
+  top: -100px;
+  animation: pulse 8s infinite alternate;
+}
+section[data-slide="6"]  .tech-circle-2 {
+  width: 300px;
+  height: 300px;
+  left: -80px;
+  bottom: -100px;
+  animation: pulse 12s infinite alternate-reverse;
+}
+
+section[data-slide="6"] .advantage-card {
+  background-color: rgba(0, 40, 70, 0.5);
+  border-left: 3px solid #00b2e3;
+  border-radius: 4px;
+  padding: 20px;
+  width: 100%;
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Ensure molecules-container centers its content */
+section[data-slide="6"] .molecules-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+section[data-slide="6"]  .advantage-icon {
+  font-size: 2.5rem;
+  color: #00b2e3;
+  margin-bottom: 15px;
+  animation: zoomIn 0.5s ease-out;
+}
+
+section[data-slide="6"]  .advantage-metric {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00b2e3;
+  margin-bottom: 5px;
+  animation: countUp 2s ease-out;
+}
+
+@keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-section[data-slide="6"] .slide-title {
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  background: linear-gradient(90deg, #00d4ff, #00ffff, #00d4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-  animation: slideInDown 0.8s ease-out;
+section[data-slide="6"]  .delay-100 {
+  animation-delay: 0.1s;
+}
+section[data-slide="6"]  .delay-200 {
+  animation-delay: 0.2s;
+}
+section[data-slide="6"]  .delay-300 {
+  animation-delay: 0.3s;
+}
+section[data-slide="6"]  .delay-400 {
+  animation-delay: 0.4s;
+}
+section[data-slide="6"]  .delay-500 {
+  animation-delay: 0.5s;
 }
 
 @keyframes slideInDown {
@@ -39,47 +176,17 @@ section[data-slide="6"] .slide-title {
   }
 }
 
-section[data-slide="6"] .content-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-section[data-slide="6"] .content-box {
-  background: rgba(20, 40, 70, 0.6);
-  border: 2px solid rgba(0, 212, 255, 0.3);
-  border-radius: 20px;
-  padding: 35px;
-  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
-  animation: slideInUp 0.8s ease-out backwards;
-}
-
-section[data-slide="6"] .content-box:nth-child(1) {
-  animation-delay: 0.2s;
-}
-section[data-slide="6"] .content-box:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-@keyframes slideInUp {
+@keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateX(-50px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-section[data-slide="6"] .box-header {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #00d4ff;
-  margin-bottom: 20px;
-  text-align: center;
-}
 
 section[data-slide="6"] .visual-demo {
   background: rgba(10, 30, 60, 0.8);
@@ -92,12 +199,6 @@ section[data-slide="6"] .visual-demo {
   justify-content: center;
   position: relative;
   overflow: hidden;
-}
-
-section[data-slide="6"] .molecules-container {
-  display: flex;
-  gap: 15px;
-  align-items: center;
 }
 
 section[data-slide="6"] .molecule {
@@ -118,13 +219,10 @@ section[data-slide="6"] .aligned .molecule {
 
 @keyframes twist {
   0%,
+  50%,
   100% {
     transform: rotate(-20deg);
     opacity: 0.7;
-  }
-  50% {
-    transform: rotate(20deg);
-    opacity: 1;
   }
 }
 
@@ -140,67 +238,18 @@ section[data-slide="6"] .aligned .molecule {
   }
 }
 
-section[data-slide="6"] .molecule:nth-child(1) {
+.molecule:nth-child(1) {
   animation-delay: 0s;
 }
-section[data-slide="6"] .molecule:nth-child(2) {
+.molecule:nth-child(2) {
   animation-delay: 0.1s;
 }
-section[data-slide="6"] .molecule:nth-child(3) {
+.molecule:nth-child(3) {
   animation-delay: 0.2s;
 }
-section[data-slide="6"] .molecule:nth-child(4) {
+.molecule:nth-child(4) {
   animation-delay: 0.3s;
 }
-section[data-slide="6"] .molecule:nth-child(5) {
+.molecule:nth-child(5) {
   animation-delay: 0.4s;
-}
-
-section[data-slide="6"] .state-label {
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 212, 255, 0.2);
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #00d4ff;
-  border: 1px solid rgba(0, 212, 255, 0.4);
-}
-
-section[data-slide="6"] .content-box p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #b8d9f0;
-  margin-bottom: 15px;
-}
-
-section[data-slide="6"] .content-box p:last-child {
-  margin-bottom: 0;
-}
-
-section[data-slide="6"] .full-width-section {
-  background: rgba(20, 40, 70, 0.6);
-  border: 2px solid rgba(0, 212, 255, 0.3);
-  border-radius: 20px;
-  padding: 35px 45px;
-  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
-  animation: slideInUp 0.8s ease-out 0.6s backwards;
-}
-
-section[data-slide="6"] .highlight-text {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: #ffffff;
-  text-align: center;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 100, 150, 0.3),
-    rgba(0, 150, 200, 0.3)
-  );
-  padding: 25px 35px;
-  border-radius: 12px;
-  border-left: 4px solid #00d4ff;
 }

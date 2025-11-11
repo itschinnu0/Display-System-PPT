@@ -3,137 +3,75 @@ import "../../styles/LCD/slide4.css";
 export function LCDSlide4() {
   return (
     <section data-slide="4">
-        <div className="slide-container">
-        <h1 className="slide-title">Properties and Applications of LCDs</h1>
+      <div className="slide-container flex flex-col">
+        <div className="background-overlay"></div>
+        <div className="tech-circle tech-circle-1"></div>
+        <div className="tech-circle tech-circle-2"></div>
 
-        <div className="main-content">
-            <div className="column">
-                <h2 className="section-title">Properties</h2>
-                <div className="properties-list">
-                    <div className="property-item">
-                        <div className="property-icon">📱</div>
-                        <div className="property-text">
-                            <strong>Thin and Lightweight</strong> — Compact design, easy to integrate
-                        </div>
-                    </div>
-
-                    <div className="property-item">
-                        <div className="property-icon">⚡</div>
-                        <div className="property-text">
-                            <strong>Low Power Consumption</strong> — Efficient compared to CRTs
-                        </div>
-                    </div>
-
-                    <div className="property-item">
-                        <div className="property-icon">💻</div>
-                        <div className="property-text">
-                            <strong>Flat Panel Technology</strong> — Sleek and modern screens
-                        </div>
-                    </div>
-
-                    <div className="property-item">
-                        <div className="property-icon">🎯</div>
-                        <div className="property-text">
-                            <strong>Good Resolution</strong> — Clear and sharp images
-                        </div>
-                    </div>
-
-                    <div className="property-item">
-                        <div className="property-icon">🌗</div>
-                        <div className="property-text">
-                            <strong>Adjustable Brightness & Contrast</strong> — Though limited vs OLEDs
-                        </div>
-                    </div>
-
-                    <div className="property-item">
-                        <div className="property-icon">👁️</div>
-                        <div className="property-text">
-                            <strong>Viewing Angle Limitation</strong> — Quality may reduce from sides
-                        </div>
-                    </div>
-
-                    <div className="property-item">
-                        <div className="property-icon">⏱️</div>
-                        <div className="property-text">
-                            <strong>Response Time</strong> — Moderate; slower than OLED/QLED
-                        </div>
-                    </div>
-
-                    <div className="property-item">
-                        <div className="property-icon">💡</div>
-                        <div className="property-text">
-                            <strong>Backlight Requirement</strong> — Needs external light source
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="column">
-                <h2 className="section-title">Applications</h2>
-                <div className="applications-content">
-                    <div className="application-list">
-                        <div className="application-item">
-                            <div className="application-icon">🖥️</div>
-                            <div className="application-text">
-                                <strong>Display Devices</strong> — TVs, monitors, smartphones
-                            </div>
-                        </div>
-
-                        <div className="application-item">
-                            <div className="application-icon">📊</div>
-                            <div className="application-text">
-                                <strong>Measuring Instruments</strong> — Digital watches, multimeters
-                            </div>
-                        </div>
-
-                        <div className="application-item">
-                            <div className="application-icon">💊</div>
-                            <div className="application-text">
-                                <strong>Medical Equipment</strong> — Portable displays, diagnostic devices
-                            </div>
-                        </div>
-
-                        <div className="application-item">
-                            <div className="application-icon">🔋</div>
-                            <div className="application-text">
-                                <strong>Battery-operated Devices</strong> — Energy efficient solutions
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="device-grid">
-                        <div className="device-card">
-                            <div className="device-icon">🖥️</div>
-                            <div className="device-label">Monitors</div>
-                        </div>
-
-                        <div className="device-card">
-                            <div className="device-icon">📱</div>
-                            <div className="device-label">Smartphones</div>
-                        </div>
-
-                        <div className="device-card">
-                            <div className="device-icon">🧮</div>
-                            <div className="device-label">Calculators</div>
-                        </div>
-
-                        <div className="device-card">
-                            <div className="device-icon">⌚</div>
-                            <div className="device-label">Digital Watches</div>
-                        </div>
-
-                        <div className="device-card">
-                            <div className="device-icon">🏥</div>
-                            <div className="device-label">Medical Displays</div>
-                        </div>
-
-                        <div className="device-card">
-                            <div className="device-icon">🚗</div>
-                            <div className="device-label">Vehicle Displays</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className="px-16 pt-12">
+          <h1 className="section-title text-4xl mb-2">
+            <span className="qled-accent">Properties and Applications</span> of LCDs
+          </h1>
         </div>
-    </div>
-    </section>);
+
+        <div className="flex-grow px-16 py-4">
+          <div className="grid grid-cols-2 gap-6 h-full">
+            <div className="col-span-1">
+              <div className="advantage-card delay-100 h-full">
+                <div className="advantage-metric">Properties</div>
+                <ul className="text-gray-300 text-xl mt-6 mb-6">
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">📱</h4>
+                    Thin and Lightweight
+                  </li>
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">⚡</h4>
+                    Low Power Consumption
+                  </li>
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">💻</h4>
+                    Flat Panel Technology
+                  </li>
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">🎯</h4>
+                    Good Resolution
+                  </li>
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">🌗</h4>
+                    Adjustable Brightness & Contrast
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-span-1">
+              <div className="grid grid-rows-1 gap-6 h-full">
+                <div className="advantage-card delay-200">
+                  <div className="advantage-metric">Applications</div>
+                  <ul className="text-gray-300 text-xl mt-6 mb-6">
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">🖥️</h4>
+                    Display Devices
+                  </li>
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">📊</h4>
+                    Measuring Instruments
+                  </li>
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">💊</h4>
+                    Medical Equipment
+                  </li>
+                  <li className="flex items-center m-4">
+                    <h4 className="text-xl mr-2 text-blue-300">🔋</h4>
+                    Battery-operated Devices
+                  </li>
+                </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

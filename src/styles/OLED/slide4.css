@@ -154,24 +154,3 @@ section[data-slide="4"] .delay-300 {
 section[data-slide="4"] .delay-400 {
   animation-delay: 0.4s;
 }
-section[data-slide="4"] .comparison-bar {
-  height: 30px;
-  background-color: rgba(0, 178, 227, 0.3);
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-}
-section[data-slide="4"] .comparison-fill {
-  height: 100%;
-  background-color: #00b2e3;
-  border-radius: 4px;
-  animation: fillBar 1.5s ease-out forwards;
-}
-@keyframes fillBar {
-  from {
-    width: 0;
-  }
-  to {
-    width: var(--fill-width);
-  }
-}
