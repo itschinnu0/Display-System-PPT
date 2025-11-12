@@ -1,4 +1,4 @@
-import '../../styles/OLED/slide1.css';
+import "../../styles/OLED/slide1.css";
 
 export function OLEDSlide1() {
   return (
@@ -23,23 +23,12 @@ export function OLEDSlide1() {
         {/* Visual section with image */}
         <div className="flex justify-center">
           <img
-            alt="QLED Quantum Dot Display Architecture"
+            alt="OLED"
             className="quantum-dot-image rounded-lg border border-blue-400"
-            src="https://blog.ansi.org/wp-content/uploads/2016/12/LED2Bclose2Bup.jpg"
+            src="/assets/OLED.webp"
           />
         </div>
       </div>
-
-      {/* Speaker Notes */}
-      <aside className="notes">
-        <h3>Speaker Notes for Slide 1:</h3>
-        <ul>
-          <li>Welcome the audience</li>
-          <li>Introduce QLED technology overview</li>
-          <li>Mention quantum dots, performance, and innovations</li>
-          <li>Estimated time: 2 minutes</li>
-        </ul>
-      </aside>
     </section>
   );
 }

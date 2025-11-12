@@ -1,4 +1,4 @@
-import { Bar } from 'react-chartjs-2';
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -6,8 +6,8 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend
-} from 'chart.js';
+  Legend,
+} from "chart.js";
 import "../../styles/QLED/slide6.css";
 
 // CRITICAL: Must register ALL components you use
@@ -35,22 +35,22 @@ export function QLEDSlide6() {
     ],
     datasets: [
       {
-        label: 'QLED',
+        label: "QLED",
         data: [9, 8, 7, 8, 6, 10, 8, 9, 7],
-        backgroundColor: '#00b2e3',
+        backgroundColor: "#00b2e3",
         borderWidth: 0,
       },
       {
-        label: 'OLED',
+        label: "OLED",
         data: [7, 9, 10, 9, 9, 6, 6, 7, 9],
-        backgroundColor: '#e3506e',
+        backgroundColor: "#e3506e",
         borderWidth: 0,
-      }
-    ]
+      },
+    ],
   };
 
   const options = {
-    indexAxis: 'y' as const,
+    indexAxis: "y" as const,
     responsive: true,
     maintainAspectRatio: false,
     scales: {
@@ -87,7 +87,7 @@ export function QLEDSlide6() {
     },
     animation: {
       duration: 1500,
-      easing: 'easeOutQuart' as const,
+      easing: "easeOutQuart" as const,
     },
   };
 
@@ -159,6 +159,35 @@ export function QLEDSlide6() {
           </p>
         </div>
       </div>
+      
+      {/* Speaker Notes */}
+      <aside className="notes">
+        <h3>Speaker Notes for Slide 6:</h3>
+        <ul>
+          <li>
+            QLED and OLED represent two distinct philosophies in display
+            technology, each excelling in different scenarios.
+          </li>
+          <li>
+            QLED's strengths: superior brightness reaching 4,000+ nits—ideal for
+            bright rooms and HDR content. It has zero burn-in risk with
+            inorganic quantum dots, longer lifespan, and more cost-effective
+            manufacturing, especially at larger screen sizes.
+          </li>
+          <li>
+            OLED's advantages: perfect black levels with pixel-level control
+            delivering infinite contrast, faster response times for gaming,
+            wider viewing angles, and better energy efficiency with typical
+            content—making it perfect for dark-room cinematic experiences.
+          </li>
+          <li>
+            Neither is objectively better. QLED dominates bright environments
+            and offers durability. OLED wins for contrast and immersion in
+            controlled lighting. Your choice depends on viewing environment and
+            content preferences.
+          </li>
+        </ul>
+      </aside>
     </section>
   );
 }

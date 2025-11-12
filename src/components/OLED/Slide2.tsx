@@ -13,10 +13,7 @@ export function OLEDSlide2() {
             Executive Summary:{" "}
             <span className="qled-accent">The OLED Edge</span>
           </h1>
-          <p className="section-subtitle text-lg text-gray-300 mb-8">
-            QLED (Quantum Dot Light Emitting Diode) display technology combines
-            advanced physics with revolutionary manufacturing
-          </p>
+          <p className="section-subtitle text-lg text-gray-300 mb-8"></p>
         </div>
 
         <div className="flex-grow px-16 py-4">
@@ -57,17 +54,6 @@ export function OLEDSlide2() {
           </div>
         </div>
       </div>
-
-      {/* Speaker Notes */}
-      <aside className="notes">
-        <h3>Speaker Notes for Slide 2:</h3>
-        <ul>
-          <li>Welcome the audience</li>
-          <li>Introduce QLED technology overview</li>
-          <li>Mention quantum dots, performance, and innovations</li>
-          <li>Estimated time: 2 minutes</li>
-        </ul>
-      </aside>
     </section>
   );
 }

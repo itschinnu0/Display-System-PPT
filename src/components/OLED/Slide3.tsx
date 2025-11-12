@@ -10,7 +10,7 @@ export function OLEDSlide3() {
         <div className="px-16 pt-10">
           <h1 className="content-title text-4xl mb-2">
             Pioneers &amp; Progress:
-            <span className="qled-accent">Historical Milestones</span>
+            <span className="qled-accent"> Historical Milestones</span>
           </h1>
           <p className="content-subtitle text-lg text-gray-300 mb-6">
             The evolution of OLED technology
@@ -23,11 +23,11 @@ export function OLEDSlide3() {
               <div className="timeline-year">1980s</div>
               <div className="timeline-dot"></div>
               <div className="timeline-content">
-                <h3 className="text-lg font-semibold">
-                  Discovery
-                </h3>
+                <h3 className="text-lg font-semibold">Discovery</h3>
                 <p className="text-gray-300">
-                  OLED technology developed in the late 1980s by researchers working with organic compounds that emit light when electrically stimulated.
+                  OLED technology developed in the late 1980s by researchers
+                  working with organic compounds that emit light when
+                  electrically stimulated.
                 </p>
               </div>
             </div>
@@ -35,11 +35,10 @@ export function OLEDSlide3() {
               <div className="timeline-year">2000s</div>
               <div className="timeline-dot"></div>
               <div className="timeline-content">
-                <h3 className="text-lg font-semibold">
-                  Mobile Adoption
-                </h3>
+                <h3 className="text-lg font-semibold">Mobile Adoption</h3>
                 <p className="text-gray-300">
-                  Commercial adoption began with mobile devices, bringing OLED displays to smartphones and portable electronics.
+                  Commercial adoption began with mobile devices, bringing OLED
+                  displays to smartphones and portable electronics.
                 </p>
               </div>
             </div>
@@ -49,7 +48,8 @@ export function OLEDSlide3() {
               <div className="timeline-content">
                 <h3 className="text-lg font-semibold">TV Revolution</h3>
                 <p className="text-gray-300">
-                  Large-scale OLED TVs entered the market, revolutionizing home entertainment with superior picture quality and design.
+                  Large-scale OLED TVs entered the market, revolutionizing home
+                  entertainment with superior picture quality and design.
                 </p>
               </div>
             </div>
@@ -59,7 +59,8 @@ export function OLEDSlide3() {
               <div className="timeline-content">
                 <h3 className="text-lg font-semibold">Present - Innovation</h3>
                 <p className="text-gray-300">
-                  Continuous advancement in flexible, foldable, and transparent OLED displays for next-generation devices.
+                  Continuous advancement in flexible, foldable, and transparent
+                  OLED displays for next-generation devices.
                 </p>
               </div>
             </div>

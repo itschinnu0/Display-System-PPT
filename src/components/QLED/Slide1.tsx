@@ -1,4 +1,4 @@
-import '../../styles/QLED/slide1.css';
+import "../../styles/QLED/slide1.css";
 
 export function QLEDSlide1() {
   return (
@@ -23,9 +23,9 @@ export function QLEDSlide1() {
         {/* Visual section with image */}
         <div className="flex justify-center">
           <img
-            alt="QLED Quantum Dot Display Architecture"
+            alt="QLED"
             className="quantum-dot-image rounded-lg border border-blue-400"
-            src="https://www.yankodesign.com/images/design_news/2024/02/top-10-game-changing-materials-that-are-shaping-the-design-and-technology-world-in-2024/game_changing_materials_2024_3.jpg"
+            src="assets/QLED-HD.webp"
           />
         </div>
       </div>
@@ -35,9 +35,21 @@ export function QLEDSlide1() {
         <h3>Speaker Notes for Slide 1:</h3>
         <ul>
           <li>Welcome the audience</li>
-          <li>Introduce QLED technology overview</li>
-          <li>Mention quantum dots, performance, and innovations</li>
-          <li>Estimated time: 2 minutes</li>
+          <li>
+            Moving to QLED—Quantum Dot LED technology. This is Samsung's
+            enhancement to traditional LCDs using nanoscale quantum dots that
+            emit precise colors when hit by LED backlight.
+          </li>
+          <li>
+            Key advantages: brightness up to 2000 nits—far exceeding OLED—wider
+            color gamut covering over 100% DCI-P3, and no burn-in risk. Perfect
+            for HDR content and bright rooms.
+          </li>
+          <li>
+            The tradeoff? Still uses backlighting, so blacks aren't as deep as
+            OLED. But the innovation continues with QD-OLED combining both
+            technologies.
+          </li>
         </ul>
       </aside>
     </section>

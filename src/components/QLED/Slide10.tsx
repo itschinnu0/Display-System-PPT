@@ -151,7 +151,37 @@ export function QLEDSlide10() {
             display innovations
           </p>
         </div>
-      </div>
+      </div>.
+      
+      {/* Speaker Notes */}
+      <aside className="notes">
+        <h3>Speaker Notes for Slide 10:</h3>
+        <ul>
+          <li>QLED's future lies in three revolutionary directions.</li>
+          <li>
+            First, self-emissive QLED—electroluminescent quantum dots that
+            produce light when electricity is applied directly, eliminating
+            backlights entirely. Sharp and Nanosys demonstrated working QDEL
+            prototypes that combine OLED's perfect blacks with QLED's
+            advantages, using existing LCD manufacturing equipment for easy
+            scalability.
+          </li>
+          <li>
+            Second, Neo QLED—already commercial—integrates quantum dots with
+            mini-LEDs just 1/40th conventional size. Samsung's Quantum Matrix
+            Technology delivers precise backlight control, virtually eliminating
+            blooming while achieving OLED-like contrast with superior
+            brightness.
+          </li>
+          <li>
+            Third, MicroLED hybrid systems use quantum dots for color conversion
+            on modular, self-emissive MicroLED arrays—enabling transparent
+            displays, flexible form factors, and AR/VR microdisplays. The goal:
+            combine OLED blacks, QLED brightness, and MicroLED durability in
+            revolutionary designs.
+          </li>
+        </ul>
+      </aside>
     </section>
   );
 }

@@ -69,6 +69,37 @@ export function QLEDSlide8() {
           </p>
         </div>
       </div>
+
+      {/* Speaker Notes */}
+      <aside className="notes">
+        <h3>Speaker Notes for Slide 8:</h3>
+        <ul>
+          <li>
+            Samsung's 2014 cadmium-free breakthrough represents a paradigm shift
+            in sustainable display manufacturing.
+          </li>
+          <li>
+            Early quantum dots used toxic cadmium selenide, which was
+            straightforward to synthesize but posed serious environmental and
+            health risks. Samsung adopted a zero-cadmium policy from the start,
+            developing indium phosphide quantum dots despite being chemically
+            far more complex to produce.
+          </li>
+          <li>
+            The challenge was immense—indium phosphide initially achieved only
+            80% of cadmium's performance due to structural defects and
+            instability. Samsung solved this with triple-layer protective
+            coatings and specialized synthesis techniques, reaching 100%
+            performance parity with 10+ year reliability.
+          </li>
+          <li>
+            This innovation enabled RoHS compliance, eliminated toxic heavy
+            metals entirely, and set global eco-friendly standards—transforming
+            QLED from a laboratory curiosity into commercially viable,
+            sustainable technology for mass production.
+          </li>
+        </ul>
+      </aside>
     </section>
   );
 }

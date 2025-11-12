@@ -63,20 +63,14 @@ export function OLEDSlide6() {
               <div className="flex">
                 <div className="w-full pr-4">
                   <p className="text-gray-300 mb-3">
-                    Superior image quality with infinite contrast ratio, perfect black
-levels, and exceptional color accuracy for professional
-applications.
+                    Superior image quality with infinite contrast ratio, perfect
+                    black levels, and exceptional color accuracy for
+                    professional applications.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="px-16 py-4 mb-2">
-          <p className="content-subtitle text-sm text-gray-400 text-center">
-            QLED technology continues to evolve, powering the next generation of
-            display innovations
-          </p>
         </div>
       </div>
     </section>

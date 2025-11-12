@@ -99,6 +99,31 @@ export function QLEDSlide4() {
           </p>
         </div>
       </div>
+
+      {/* Speaker Notes */}
+      <aside className="notes">
+        <h3>Speaker Notes for Slide 4:</h3>
+        <ul>
+          <li>
+            The magic of quantum dots lies in quantum confinement. When
+            semiconductors are shrunk to 2-10 nanometers, electrons get trapped
+            in a 'quantum box' smaller than their natural orbit, fundamentally
+            changing their behavior.
+          </li>
+          <li>
+            This creates a remarkable size-dependent property: smaller dots have
+            larger energy gaps and emit blue light around 450-495 nanometers. As
+            size increases to 5 nanometers, you get green. At 8 nanometers, red
+            light emerges at 620-750 nanometers.
+          </li>
+          <li>
+            This inverse relationship—smaller equals bluer, larger equals
+            redder—gives manufacturers precise control over color simply by
+            adjusting quantum dot diameter during synthesis. It's this
+            tunability that powers QLED's exceptional color accuracy.
+          </li>
+        </ul>
+      </aside>
     </section>
   );
 }

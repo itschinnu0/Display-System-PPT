@@ -43,6 +43,11 @@ const RevealProvider = ({ children }: React.PropsWithChildren) => {
       minScale: 1,
       maxScale: 1,
 
+      //PDF
+      pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false,
+      // view: "print",
+
       plugins: [
         RevealSpeakerView,
         RevealSpeakerNotes,
@@ -87,7 +92,6 @@ const RevealProvider = ({ children }: React.PropsWithChildren) => {
     const hasChart = slideContainer.querySelector(".chart-container canvas");
 
     if (hasChart) {
-
       const animatedElements = slideContainer.querySelectorAll(
         ".content-title, .content-subtitle, .comparison-item, .tech-circle, .background-overlay, .chart-container canvas"
       );

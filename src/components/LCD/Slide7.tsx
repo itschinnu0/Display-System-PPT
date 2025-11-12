@@ -21,7 +21,9 @@ export function LCDSlide7() {
               <div className="advantage-card p-5 rounded-lg delay-300">
                 <div className="flex items-center justify-center mb-2">
                   <h3 className="text-2xl mr-3">🪟</h3>
-                  <h3 className="text-xl font-semibold text-center">Smart Windows</h3>
+                  <h3 className="text-xl font-semibold text-center">
+                    Smart Windows
+                  </h3>
                 </div>
                 <p className="text-gray-300">
                   Glass that automatically adjusts transparency based on
@@ -34,7 +36,9 @@ export function LCDSlide7() {
               <div className="advantage-card p-5 rounded-lg delay-300">
                 <div className="flex items-center justify-center mb-2">
                   <h3 className="text-2xl mr-3 mt-1">🧬</h3>
-                  <h3 className="text-xl font-semibold text-center">Bio-Sensing Films</h3>
+                  <h3 className="text-xl font-semibold text-center">
+                    Bio-Sensing Films
+                  </h3>
                 </div>
                 <p className="text-gray-300">
                   Medical films made of liquid crystals that can detect diseases
@@ -47,7 +51,9 @@ export function LCDSlide7() {
               <div className="advantage-card p-5 rounded-lg delay-300">
                 <div className="flex items-center justify-center mb-2">
                   <h3 className="text-2xl mr-3 mt-1">🤖</h3>
-                  <h3 className="text-xl font-semibold text-center">Artificial Muscles</h3>
+                  <h3 className="text-xl font-semibold text-center">
+                    Artificial Muscles
+                  </h3>
                 </div>
                 <p className="text-gray-300">
                   LC-based materials that can move and respond to heat or light

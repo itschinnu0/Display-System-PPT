@@ -9,7 +9,7 @@ export function QLEDSlide12() {
         <div className="tech-circle tech-circle-2"></div>
         <div className="px-16 pt-12">
           <h1 className="section-title text-4xl mb-2">
-            Conclusion &amp; <span className="qled-accent">Market Outlook</span>
+            <span className="qled-accent">Conclusion</span>
           </h1>
           <p className="section-subtitle text-lg text-gray-300 mb-8">
             From Nobel Prize-winning science to industry-changing display

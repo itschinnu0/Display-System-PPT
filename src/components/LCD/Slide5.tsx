@@ -35,28 +35,36 @@ export function LCDSlide5() {
             <div className="advantage-card p-5 rounded-lg delay-300">
               <div className="flex items-center justify-center mb-2">
                 <h3 className="text-2xl mr-3 mt-1">💍</h3>
-                <h3 className="text-xl font-semibold text-center">Mood Rings</h3>
+                <h3 className="text-xl font-semibold text-center">
+                  Mood Rings
+                </h3>
               </div>
               <p className="text-gray-300">Color-changing jewelry</p>
             </div>
             <div className="advantage-card p-5 rounded-lg delay-300">
               <div className="flex items-center justify-center mb-2">
                 <h3 className="text-2xl mr-3 mt-1">🌡️</h3>
-                <h3 className="text-xl font-semibold text-center">Thermometers</h3>
+                <h3 className="text-xl font-semibold text-center">
+                  Thermometers
+                </h3>
               </div>
               <p className="text-gray-300">Digital temperature displays</p>
             </div>
             <div className="advantage-card p-5 rounded-lg delay-300">
               <div className="flex items-center justify-center mb-2">
                 <h3 className="text-2xl mr-3 mt-1">🔢</h3>
-                <h3 className="text-xl font-semibold text-center">Calculators</h3>
+                <h3 className="text-xl font-semibold text-center">
+                  Calculators
+                </h3>
               </div>
               <p className="text-gray-300">Simple LCD screens</p>
             </div>
             <div className="advantage-card p-5 rounded-lg delay-300">
               <div className="flex items-center justify-center mb-2">
                 <h3 className="text-2xl mr-3 mt-1">⌚</h3>
-                <h3 className="text-xl font-semibold text-center">Digital Watches</h3>
+                <h3 className="text-xl font-semibold text-center">
+                  Digital Watches
+                </h3>
               </div>
               <p className="text-gray-300">Time displays</p>
             </div>

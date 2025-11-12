@@ -52,30 +52,23 @@ export function OLEDSlide4() {
                     and enhanced functionality.
                   </h3>
                   <ul className="text-gray-300 mt-10">
-                  <li className="flex items-center m-4">
-                    <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
-                    Transparent OLED: See-through displays
-                  </li>
-                  <li className="flex items-center m-4">
-                    <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
-                    Top-Emitting OLED: Better efficiency
-                  </li>
-                  <li className="flex items-center m-4">
-                    <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
-                    Flexible OLED: Bendable and foldable screens
-                  </li>
-                </ul>
+                    <li className="flex items-center m-4">
+                      <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
+                      Transparent OLED: See-through displays
+                    </li>
+                    <li className="flex items-center m-4">
+                      <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
+                      Top-Emitting OLED: Better efficiency
+                    </li>
+                    <li className="flex items-center m-4">
+                      <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
+                      Flexible OLED: Bendable and foldable screens
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="px-16 py-4 mb-2">
-          <p className="content-subtitle text-sm text-gray-400 text-center">
-            QLED technology combines industry-leading brightness with
-            exceptional durability and accurate colors
-          </p>
         </div>
       </div>
     </section>

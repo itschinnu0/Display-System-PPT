@@ -10,7 +10,7 @@ export function QLEDSlide3() {
         <div className="px-16 pt-10">
           <h1 className="content-title text-4xl mb-2">
             Pioneers &amp; Progress:
-            <span className="qled-accent">Historical Milestones</span>
+            <span className="qled-accent"> Historical Milestones</span>
           </h1>
           <p className="content-subtitle text-lg text-gray-300 mb-6">
             The evolution of QLED technology from scientific discovery to
@@ -99,6 +99,33 @@ export function QLEDSlide3() {
           </p>
         </div>
       </div>
+
+      {/* Speaker Notes */}
+      <aside className="notes">
+        <h3>Speaker Notes for Slide 3:</h3>
+        <ul>
+          <li>
+            QLED's journey spans four decades, from scientific discovery to
+            commercial success.
+          </li>
+          <li>
+            In 1981, Alexei Ekimov, along with Alexander Efros and Louis Brus,
+            discovered quantum dots while studying colored glass—observing how
+            particle size affected light absorption through quantum effects.
+          </li>
+          <li>
+            Samsung began quantum dot research in 2001. Sony launched the first
+            quantum dot-enhanced displays in 2013 with Triluminos technology,
+            followed by Samsung's QLED branding in 2017, forming an alliance
+            with Hisense and TCL.
+          </li>
+          <li>
+            In 2023, Ekimov, Brus, and Efros were awarded the Nobel Prize in
+            Chemistry, recognizing quantum dots' transformative impact—from
+            medieval stained glass principles to modern display technology.
+          </li>
+        </ul>
+      </aside>
     </section>
   );
 }

@@ -13,7 +13,7 @@ export function OLEDSlide5() {
             <span className="qled-accent"> Quality and Performance</span>
           </h1>
         </div>
-        <div className="flex-grow px-16 py-4">
+        <div className="flex-grow px-16 py-4 mb-8">
           <div className="flex flex-col">
             <div className="pr-6">
               <h2 className="text-xl font-semibold mb-4 qled-accent">

@@ -89,6 +89,23 @@ export function QLEDSlide11() {
           </p>
         </div>
       </div>
+      
+      {/* Speaker Notes */}
+      <aside className="notes">
+        <h3>Speaker Notes for Slide 11:</h3>
+        <ul>
+          <li>QLED delivers exceptional sustainability alongside performance.</li>
+          <li>
+            Samsung's cadmium-free indium phosphide quantum dots eliminated toxic heavy metals in 2014, enabling RoHS compliance and global eco-standards. This innovation made commercial QLED environmentally safe without compromising optical performance.
+          </li>
+          <li>
+            Energy efficiency is significant—QLED uses 40% less power than conventional LCDs by converting blue light precisely with minimal waste. Samsung's target is 30% power reduction by 2030 versus 2019 models. The 75-inch Q60C consumes just 108 watts on average.
+          </li>
+          <li>
+            Longer lifespan means fewer replacements—quantum dots don't degrade like organic materials—reducing e-waste dramatically. Samsung achieved Product Carbon Reduction certifications for 80+ models in 2025, using recycled plastics and solar-powered remotes that eliminate 99 million batteries over seven years.
+          </li>
+        </ul>
+      </aside>
     </section>
   );
 }

@@ -10,7 +10,8 @@ export function LCDSlide4() {
 
         <div className="px-16 pt-12">
           <h1 className="section-title text-4xl mb-2">
-            <span className="qled-accent">Properties and Applications</span> of LCDs
+            <span className="qled-accent">Properties and Applications</span> of
+            LCDs
           </h1>
         </div>
 
@@ -49,23 +50,23 @@ export function LCDSlide4() {
                 <div className="advantage-card delay-200">
                   <div className="advantage-metric">Applications</div>
                   <ul className="text-gray-300 text-xl mt-6 mb-6">
-                  <li className="flex items-center m-4">
-                    <h4 className="text-xl mr-2 text-blue-300">🖥️</h4>
-                    Display Devices
-                  </li>
-                  <li className="flex items-center m-4">
-                    <h4 className="text-xl mr-2 text-blue-300">📊</h4>
-                    Measuring Instruments
-                  </li>
-                  <li className="flex items-center m-4">
-                    <h4 className="text-xl mr-2 text-blue-300">💊</h4>
-                    Medical Equipment
-                  </li>
-                  <li className="flex items-center m-4">
-                    <h4 className="text-xl mr-2 text-blue-300">🔋</h4>
-                    Battery-operated Devices
-                  </li>
-                </ul>
+                    <li className="flex items-center m-4">
+                      <h4 className="text-xl mr-2 text-blue-300">🖥️</h4>
+                      Display Devices
+                    </li>
+                    <li className="flex items-center m-4">
+                      <h4 className="text-xl mr-2 text-blue-300">📊</h4>
+                      Measuring Instruments
+                    </li>
+                    <li className="flex items-center m-4">
+                      <h4 className="text-xl mr-2 text-blue-300">💊</h4>
+                      Medical Equipment
+                    </li>
+                    <li className="flex items-center m-4">
+                      <h4 className="text-xl mr-2 text-blue-300">🔋</h4>
+                      Battery-operated Devices
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
