@@ -25,7 +25,7 @@ export function LCDSlide1() {
           <img
             alt="LCD"
             className="quantum-dot-image rounded-lg border border-blue-400"
-            src=""
+            src="/assets/LCD.webp"
           />
         </div>
       </div>
