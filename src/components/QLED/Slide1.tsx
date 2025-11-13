@@ -14,7 +14,7 @@ export function QLEDSlide1() {
             <span className="qled-accent">QLED</span> Display Technology
           </h1>
 
-          <p className="subtitle-text text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-10">
+          <p className="subtitle-text text-gray-300 max-w-3xl mb-10">
             A professional exploration of quantum dot technology, performance
             advantages, and innovation trajectory
           </p>

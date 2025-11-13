@@ -31,6 +31,7 @@ section[data-slide="1"] .subtitle-text {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   animation: fadeInUp 1.2s ease-out forwards;
+  font-size: large;
 }
 
 section[data-slide="1"] .qled-accent {

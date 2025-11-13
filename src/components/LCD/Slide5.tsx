@@ -86,17 +86,6 @@ export function LCDSlide5() {
           </p>
         </div>
       </div>
-
-      {/* Speaker Notes */}
-      <aside className="notes">
-        <h3>Speaker Notes for Slide 2:</h3>
-        <ul>
-          <li>Welcome the audience</li>
-          <li>Introduce QLED technology overview</li>
-          <li>Mention quantum dots, performance, and innovations</li>
-          <li>Estimated time: 2 minutes</li>
-        </ul>
-      </aside>
     </section>
   );
 }
