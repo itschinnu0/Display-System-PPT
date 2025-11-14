@@ -28,7 +28,7 @@ export function QLEDSlide11() {
                   <h3 className="text-xl font-semibold">
                     Cadmium-Free Innovation
                   </h3>
-                  <p className="text-gray-300">
+                  <p className="text-gray-300 text-xl">
                     Samsung's indium phosphide (InP) quantum dots eliminate
                     toxic heavy metals while maintaining performance
                   </p>
@@ -41,7 +41,7 @@ export function QLEDSlide11() {
                 <div>
                   <h3 className="text-xl font-semibold">Energy Efficiency</h3>
                   <div className="eco-stat">40%</div>
-                  <p className="text-gray-300">
+                  <p className="text-gray-300 text-xl">
                     Better energy efficiency than conventional LCD displays,
                     with significant power savings in typical viewing conditions
                   </p>
@@ -55,7 +55,7 @@ export function QLEDSlide11() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Reduced Waste</h3>
-                  <p className="text-gray-300">
+                  <p className="text-gray-300 text-xl">
                     Longer operational lifespan means fewer replacements,
                     reducing electronic waste in landfills
                   </p>
@@ -69,7 +69,7 @@ export function QLEDSlide11() {
                   <h3 className="text-xl font-semibold">
                     Regulatory Compliance
                   </h3>
-                  <p className="text-gray-300">
+                  <p className="text-gray-300 text-xl">
                     Meets international environmental standards including RoHS
                     directive with eco-friendly materials
                   </p>

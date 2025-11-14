@@ -41,7 +41,7 @@ export function LCDSlide2() {
               <p className="text-gray-300">
                 What makes liquid crystals particularly valuable in modern
                 technology is their high sensitivity to temperature changes,
-                electric field!, and magnetic fields.
+                electric field, and magnetic fields.
               </p>
             </div>
             <div className="advantage-card p-5 rounded-lg delay-400">

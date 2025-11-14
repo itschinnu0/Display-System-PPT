@@ -22,7 +22,7 @@ export function OLEDSlide6() {
               <h3 className="text-xl font-semibold mb-3 qled-accent">
                 Key Advantages
               </h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4 text-xl">
                 Thinner, lighter, flexible displays with high contrast, true
                 blacks, vibrant colors, wide viewing angles, and fast response
                 times.
@@ -35,7 +35,7 @@ export function OLEDSlide6() {
               <h3 className="text-xl font-semibold mb-3 qled-accent">
                 Main Disadvantages
               </h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4 text-xl">
                 Shorter lifespan for blue OLEDs, water damage susceptibility,
                 higher manufacturing costs, and potential for burn-in effects.
               </p>
@@ -47,7 +47,7 @@ export function OLEDSlide6() {
               <h3 className="text-xl font-semibold mb-3 qled-accent">
                 Technical Challenges
               </h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4 text-xl">
                 Manufacturing complexity, material degradation over time, and
                 the need for protective encapsulation against environmental
                 factors.
@@ -62,7 +62,7 @@ export function OLEDSlide6() {
               </h3>
               <div className="flex">
                 <div className="w-full pr-4">
-                  <p className="text-gray-300 mb-3">
+                  <p className="text-gray-300 mb-3 text-xl">
                     Superior image quality with infinite contrast ratio, perfect
                     black levels, and exceptional color accuracy for
                     professional applications.

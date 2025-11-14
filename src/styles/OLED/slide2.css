@@ -25,6 +25,7 @@ section[data-slide="2"] .section-title {
 section[data-slide="2"] .section-subtitle {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  font-size: x-large;
   animation: fadeInUp 0.8s ease-out;
 }
 section[data-slide="2"] .qled-accent {
@@ -62,6 +63,7 @@ section[data-slide="2"] .tech-circle-2 {
 section[data-slide="2"] .advantage-card {
   background-color: rgba(0, 40, 70, 0.5);
   border-left: 3px solid #00b2e3;
+  font-size: x-large;
   animation: slideIn 0.7s ease-out;
 }
 section[data-slide="2"] .advantage-icon {

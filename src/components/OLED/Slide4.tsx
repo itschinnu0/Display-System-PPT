@@ -53,15 +53,15 @@ export function OLEDSlide4() {
                   </h3>
                   <ul className="text-gray-300 mt-10">
                     <li className="flex items-center m-4">
-                      <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
+                      <i className="fas fa-check text-lg mr-2 text-blue-300"></i>
                       Transparent OLED: See-through displays
                     </li>
                     <li className="flex items-center m-4">
-                      <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
+                      <i className="fas fa-check text-lg mr-2 text-blue-300"></i>
                       Top-Emitting OLED: Better efficiency
                     </li>
                     <li className="flex items-center m-4">
-                      <i className="fas fa-check text-xs mr-2 text-blue-300"></i>
+                      <i className="fas fa-check text-lg mr-2 text-blue-300"></i>
                       Flexible OLED: Bendable and foldable screens
                     </li>
                   </ul>

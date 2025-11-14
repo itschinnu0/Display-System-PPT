@@ -29,7 +29,7 @@ export function QLEDSlide9() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Premium Televisions</h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-xl text-gray-300">
                     Market leaders Samsung, TCL, and Hisense dominate the
                     premium QLED TV segment
                   </p>
@@ -43,7 +43,7 @@ export function QLEDSlide9() {
                   <h4 className="font-semibold">
                     Gaming &amp; Computer Monitors
                   </h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-xl text-gray-300">
                     Superior brightness and color accuracy driving adoption in
                     high-performance displays
                   </p>
@@ -57,7 +57,7 @@ export function QLEDSlide9() {
                   <h4 className="font-semibold">
                     Mobile &amp; Emerging Applications
                   </h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-xl text-gray-300">
                     Growing adoption in tablets, smartphones, and digital
                     signage markets
                   </p>

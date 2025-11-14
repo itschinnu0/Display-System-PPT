@@ -20,7 +20,7 @@ export function OLEDSlide5() {
                 Superior Image Quality
               </h2>
               <div className="feature-card delay-100">
-                <h3 className="text-lg font-medium">
+                <h3 className="text-xl font-medium">
                   OLED displays produce exceptional image quality with infinite
                   contrast ratios, true black levels, and vibrant colors. Each
                   pixel generates its own light, eliminating the need for
@@ -33,7 +33,7 @@ export function OLEDSlide5() {
                 Lightning-Fast Response
               </h2>
               <div className="feature-card delay-200">
-                <h3 className="text-lg font-medium">
+                <h3 className="text-xl font-medium">
                   OLED technology offers incredibly fast response times, making
                   it ideal for gaming and fast-paced video content. With
                   response times measured in microseconds, OLED displays

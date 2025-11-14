@@ -42,7 +42,7 @@ export function OLEDSlide2() {
             </div>
             <div className="advantage-card p-5 rounded-lg delay-300">
               <div className="flex items-start mb-2">
-                <i className="advantage-icon fas fa-lightbulb-o text-2xl mr-3 mt-1"></i>
+                <h3 className="text-2xl mr-3 mt-1">💡</h3>
                 <h3 className="text-xl font-semibold">Key Innovation</h3>
               </div>
               <p className="text-gray-300">

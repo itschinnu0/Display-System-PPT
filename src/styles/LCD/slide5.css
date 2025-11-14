@@ -25,6 +25,7 @@ section[data-slide="5"] .section-title {
 section[data-slide="5"] .section-subtitle {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  font-size: x-large;
   animation: fadeInUp 0.8s ease-out;
 }
 section[data-slide="5"] .qled-accent {

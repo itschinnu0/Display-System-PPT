@@ -30,6 +30,7 @@ section[data-slide="1"] .title-text {
 section[data-slide="1"] .subtitle-text {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  font-size: x-large;
   animation: fadeInUp 1.2s ease-out forwards;
 }
 
