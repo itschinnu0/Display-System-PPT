@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Current Applications</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0c2045;
+        font-family: "Montserrat", sans-serif;
+        color: white;
+      }
+
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        position: relative;
+        background-color: #0c2045;
+        overflow: hidden;
+      }
+
+      .slide-title {
+        position: absolute;
+        top: 40px;
+        left: 70px;
+        width: 700px;
+      }
+
+      .title-text {
+        font-size: 46px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .slide-content {
+        position: absolute;
+        top: 130px;
+        left: 70px;
+        width: 550px;
+        height: 520px;
+        z-index: 10;
+      }
+
+      .applications-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 25px;
+        margin-top: 20px;
+      }
+
+      .application-item {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid rgba(0, 195, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .application-item:hover {
+        background-color: rgba(0, 195, 255, 0.1);
+        border-color: rgba(0, 195, 255, 0.5);
+      }
+
+      .application-icon {
+        font-size: 36px;
+        color: #00c3ff;
+        margin-bottom: 15px;
+      }
+
+      .application-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 10px;
+      }
+
+      .application-desc {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.5;
+      }
+
+      .brands-section {
+        position: relative;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .brands-title {
+        font-size: 20px;
+        color: #00c3ff;
+        margin-bottom: 15px;
+      }
+
+      .brands-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .brand-chip {
+        padding: 8px 16px;
+        background-color: rgba(0, 195, 255, 0.15);
+        border-radius: 50px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .image-area {
+        position: absolute;
+        top: 130px;
+        right: 70px;
+        width: 550px;
+        height: 520px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .devices-visual {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .device-wrapper {
+        position: relative;
+        width: 500px;
+        height: 450px;
+      }
+
+      .device-card {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 195, 255, 0.3);
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      .card-1 {
+        top: 20px;
+        left: 100px;
+        width: 300px;
+        height: 200px;
+        z-index: 3;
+        transform: rotate(-5deg);
+      }
+
+      .card-2 {
+        top: 80px;
+        left: 0;
+        width: 240px;
+        height: 180px;
+        z-index: 2;
+        transform: rotate(8deg);
+      }
+
+      .card-3 {
+        top: 180px;
+        left: 70px;
+        width: 350px;
+        height: 150px;
+        z-index: 4;
+        transform: rotate(-3deg);
+      }
+
+      .card-4 {
+        top: 230px;
+        left: 250px;
+        width: 200px;
+        height: 180px;
+        z-index: 1;
+        transform: rotate(6deg);
+      }
+
+      .device-label {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #00c3ff;
+      }
+
+      .background-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        z-index: 0;
+      }
+
+      .accent-circle {
+        position: absolute;
+        background: #00c3ff;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.15;
+        z-index: 1;
+      }
+
+      .accent-circle-1 {
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+      }
+
+      .accent-circle-2 {
+        bottom: -150px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <!-- Background Pattern -->
+      <div class="background-pattern"></div>
+      <!-- Accent Circles -->
+      <div class="accent-circle accent-circle-1"></div>
+      <div class="accent-circle accent-circle-2"></div>
+      <!-- Slide Title -->
+      <div class="slide-title">
+        <div class="title-text">Current Applications</div>
+      </div>
+      <!-- Left Content Area -->
+      <div class="slide-content">
+        <div class="applications-grid">
+          <div class="application-item">
+            <div class="application-icon">
+              <i class="fas fa-tv"></i>
+            </div>
+            <div class="application-title">Premium TVs</div>
+            <div class="application-desc">
+              Flagship television models with superior brightness and color
+              accuracy for high-end home entertainment
+            </div>
+          </div>
+          <div class="application-item">
+            <div class="application-icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <div class="application-title">Gaming Monitors</div>
+            <div class="application-desc">
+              High-performance displays with vibrant colors and excellent
+              response times for immersive gaming
+            </div>
+          </div>
+          <div class="application-item">
+            <div class="application-icon">
+              <i class="fas fa-tablet-alt"></i>
+            </div>
+            <div class="application-title">Tablets &amp; Mobile</div>
+            <div class="application-desc">
+              Emerging integration into premium portable devices for enhanced
+              visual experiences
+            </div>
+          </div>
+          <div class="application-item">
+            <div class="application-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="application-title">Commercial Signage</div>
+            <div class="application-desc">
+              Digital displays for retail, corporate, and public spaces
+              requiring durability and brightness
+            </div>
+          </div>
+        </div>
+        <div class="brands-section">
+          <div class="brands-title">Leading Manufacturers</div>
+          <div class="brands-list">
+            <div class="brand-chip">Samsung</div>
+            <div class="brand-chip">TCL</div>
+            <div class="brand-chip">Hisense</div>
+            <div class="brand-chip">Vizio</div>
+            <div class="brand-chip">Philips</div>
+          </div>
+        </div>
+      </div>
+      <!-- Right Visual Area -->
+      <div class="image-area">
+        <div class="devices-visual">
+          <div class="device-wrapper">
+            <div class="device-card card-1">
+              <img
+                alt="QLED TV Display"
+                height="160"
+                src="https://page.gensparksite.com/slides_images/ec7915d0075a12d54012030a410075c3.webp"
+                width="280"
+              />
+              <div class="device-label">Premium QLED TV</div>
+            </div>
+            <div class="device-card card-2">
+              <img
+                alt="Gaming Monitor"
+                height="140"
+                src="https://www.genspark.ai/image_placeholder.png"
+                width="220"
+              />
+              <div class="device-label">Gaming Monitor</div>
+            </div>
+            <div class="device-card card-3">
+              <img
+                alt="Digital Signage"
+                height="120"
+                src="https://page.gensparksite.com/slides_images/437a764b3fe508503930420470d2a3eb.webp"
+                width="330"
+              />
+              <div class="device-label">Commercial Signage</div>
+            </div>
+            <div class="device-card card-4">
+              <img
+                alt="Tablet"
+                height="140"
+                src="https://www.genspark.ai/image_placeholder.png"
+                width="180"
+              />
+              <div class="device-label">Tablets</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

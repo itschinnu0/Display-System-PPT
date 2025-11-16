@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification of Liquid Crystals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4a 50%, #0d1b2e 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            max-width: 1800px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 35px;
+            background: linear-gradient(90deg, #00d4ff, #00ffff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .phases-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .phase-card {
+            background: rgba(20, 40, 70, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+            transition: all 0.4s ease;
+            animation: slideInUp 0.8s ease-out backwards;
+        }
+
+        .phase-card:nth-child(1) { animation-delay: 0.2s; }
+        .phase-card:nth-child(2) { animation-delay: 0.4s; }
+        .phase-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .phase-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 212, 255, 0.8);
+            box-shadow: 0 12px 48px rgba(0, 212, 255, 0.3);
+        }
+
+        .phase-header {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .phase-visual {
+            background: rgba(10, 30, 60, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            height: 140px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nematic-lines {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .nematic-line {
+            width: 3px;
+            height: 80px;
+            background: linear-gradient(180deg, #00d4ff, #0080ff);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .nematic-line:nth-child(1) { animation-delay: 0s; }
+        .nematic-line:nth-child(2) { animation-delay: 0.1s; }
+        .nematic-line:nth-child(3) { animation-delay: 0.2s; }
+        .nematic-line:nth-child(4) { animation-delay: 0.3s; }
+        .nematic-line:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.05); }
+        }
+
+        .smectic-layers {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 80%;
+        }
+
+        .smectic-layer {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            animation: layerGlow 2s ease-in-out infinite;
+        }
+
+        .smectic-layer:nth-child(1) { animation-delay: 0s; }
+        .smectic-layer:nth-child(2) { animation-delay: 0.3s; }
+        .smectic-layer:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes layerGlow {
+            0%, 100% { opacity: 0.5; box-shadow: 0 0 10px rgba(0, 212, 255, 0.3); }
+            50% { opacity: 1; box-shadow: 0 0 20px rgba(0, 212, 255, 0.8); }
+        }
+
+        .cholesteric-waves {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 80%;
+        }
+
+        .cholesteric-wave {
+            width: 100%;
+            height: 20px;
+            position: relative;
+        }
+
+        .cholesteric-wave svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cholesteric-wave path {
+            stroke: #00d4ff;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
+            animation: waveFlow 3s ease-in-out infinite;
+        }
+
+        .cholesteric-wave:nth-child(2) path { animation-delay: 0.3s; }
+        .cholesteric-wave:nth-child(3) path { animation-delay: 0.6s; }
+        .cholesteric-wave:nth-child(4) path { animation-delay: 0.9s; }
+
+        @keyframes waveFlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .phase-description {
+            list-style: none;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #b8d9f0;
+        }
+
+        .phase-description li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .phase-description li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-size: 1.3rem;
+            line-height: 1.2;
+        }
+
+        .comparison-table {
+            width: 100%;
+            background: rgba(20, 40, 70, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+            animation: slideInUp 1s ease-out 0.8s backwards;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, rgba(0, 100, 150, 0.4), rgba(0, 150, 200, 0.4));
+        }
+
+        th {
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #00d4ff;
+            text-align: left;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        td {
+            padding: 15px;
+            font-size: 0.95rem;
+            color: #b8d9f0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 1200px) {
+            .phases-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .slide-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            th, td {
+                padding: 12px;
+                font-size: 0.85rem;
+            }
+
+            .phase-header {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="slide-title">Classification of Liquid Crystals</h1>
+
+        <div class="phases-container">
+            <!-- Nematic Phase -->
+            <div class="phase-card">
+                <h2 class="phase-header">Nematic Phase</h2>
+                <div class="phase-visual">
+                    <div class="nematic-lines">
+                        <div class="nematic-line"></div>
+                        <div class="nematic-line"></div>
+                        <div class="nematic-line"></div>
+                        <div class="nematic-line"></div>
+                        <div class="nematic-line"></div>
+                    </div>
+                </div>
+                <ul class="phase-description">
+                    <li>Molecules are aligned parallel but not arranged in layers</li>
+                    <li>Most commonly used in LCD displays</li>
+                </ul>
+            </div>
+
+            <!-- Smectic Phase -->
+            <div class="phase-card">
+                <h2 class="phase-header">Smectic Phase</h2>
+                <div class="phase-visual">
+                    <div class="smectic-layers">
+                        <div class="smectic-layer"></div>
+                        <div class="smectic-layer"></div>
+                        <div class="smectic-layer"></div>
+                    </div>
+                </div>
+                <ul class="phase-description">
+                    <li>Molecules are aligned and arranged in distinct layers</li>
+                    <li>More ordered structure than nematic phase</li>
+                </ul>
+            </div>
+
+            <!-- Cholesteric Phase -->
+            <div class="phase-card">
+                <h2 class="phase-header">Cholesteric Phase</h2>
+                <div class="phase-visual">
+                    <div class="cholesteric-waves">
+                        <div class="cholesteric-wave">
+                            <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+                                <path d="M 0 10 Q 25 4 50 10 T 100 10 T 150 10 T 200 10" />
+                            </svg>
+                        </div>
+                        <div class="cholesteric-wave">
+                            <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+                                <path d="M 0 10 Q 25 4 50 10 T 100 10 T 150 10 T 200 10" />
+                            </svg>
+                        </div>
+                        <div class="cholesteric-wave">
+                            <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+                                <path d="M 0 10 Q 25 4 50 10 T 100 10 T 150 10 T 200 10" />
+                            </svg>
+                        </div>
+                        <div class="cholesteric-wave">
+                            <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+                                <path d="M 0 10 Q 25 4 50 10 T 100 10 T 150 10 T 200 10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <ul class="phase-description">
+                    <li>Molecules arranged in helical structures</li>
+                    <li>Can selectively reflect light (used in displays, thermometers)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase Type</th>
+                        <th>Molecular Arrangement</th>
+                        <th>Order Level</th>
+                        <th>Primary Applications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Nematic</strong></td>
+                        <td>Parallel orientation, no layers</td>
+                        <td>Lowest</td>
+                        <td>Standard LCD displays</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Smectic</strong></td>
+                        <td>Parallel orientation in layers</td>
+                        <td>Medium</td>
+                        <td>High-precision displays</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cholesteric</strong></td>
+                        <td>Helical structure</td>
+                        <td>Highest</td>
+                        <td>Color-changing displays, thermometers</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>How QLED Works</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: "Montserrat", sans-serif;
+      }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        position: relative;
+        background-color: #0a192f;
+        overflow: hidden;
+      }
+      .circuit-pattern {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.15;
+        z-index: 1;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 5;
+      }
+      .comparison-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .diagram-container {
+        background-color: rgba(10, 25, 47, 0.7);
+        border-radius: 8px;
+        border: 1px solid rgba(100, 255, 218, 0.3);
+        padding: 20px;
+        width: 45%;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-in-out forwards;
+      }
+      .diagram-container:first-child {
+        animation-delay: 0.3s;
+      }
+      .diagram-container:last-child {
+        animation-delay: 0.6s;
+      }
+      .title-content {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-in-out forwards;
+      }
+      .explanation-content {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-in-out forwards;
+        animation-delay: 0.9s;
+      }
+      .layer-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        opacity: 0;
+        animation: slideRight 0.5s ease-in-out forwards;
+      }
+      .lcd-layer-1 {
+        animation-delay: 1s;
+      }
+      .lcd-layer-2 {
+        animation-delay: 1.1s;
+      }
+      .lcd-layer-3 {
+        animation-delay: 1.2s;
+      }
+      .lcd-layer-4 {
+        animation-delay: 1.3s;
+      }
+      .lcd-layer-5 {
+        animation-delay: 1.4s;
+      }
+      .qd-layer-1 {
+        animation-delay: 1.5s;
+      }
+      .qd-layer-2 {
+        animation-delay: 1.6s;
+      }
+      .qd-layer-3 {
+        animation-delay: 1.7s;
+      }
+      .qd-layer-4 {
+        animation-delay: 1.8s;
+      }
+
+      .layer-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 10px;
+        flex-shrink: 0;
+      }
+      .lcd-indicator {
+        background-color: #3b82f6;
+      }
+      .qd-indicator {
+        background-color: #06b6d4;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideRight {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .display-structure {
+        width: 100%;
+        height: 240px;
+        background-color: rgba(10, 25, 47, 0.5);
+        border-radius: 4px;
+        margin-bottom: 15px;
+        position: relative;
+      }
+      .display-layer {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        border-radius: 2px;
+      }
+      /* LCD layers */
+      .lcd-backlight {
+        height: 30px;
+        bottom: 10px;
+        background-color: rgba(59, 130, 246, 0.6);
+      }
+      .lcd-polarizer1 {
+        height: 15px;
+        bottom: 45px;
+        background-color: rgba(59, 130, 246, 0.4);
+      }
+      .lcd-liquid-crystal {
+        height: 25px;
+        bottom: 65px;
+        background-color: rgba(59, 130, 246, 0.5);
+      }
+      .lcd-polarizer2 {
+        height: 15px;
+        bottom: 95px;
+        background-color: rgba(59, 130, 246, 0.4);
+      }
+      .lcd-color-filter {
+        height: 20px;
+        bottom: 115px;
+        background-color: rgba(59, 130, 246, 0.7);
+      }
+      /* QD layers */
+      .qd-backlight {
+        height: 30px;
+        bottom: 10px;
+        background-color: rgba(6, 182, 212, 0.6);
+      }
+      .qd-enhancement-film {
+        height: 25px;
+        bottom: 45px;
+        background-color: rgba(6, 182, 212, 0.8);
+      }
+      .qd-lcd-panel {
+        height: 30px;
+        bottom: 75px;
+        background-color: rgba(6, 182, 212, 0.5);
+      }
+      .qd-color-filter {
+        height: 20px;
+        bottom: 110px;
+        background-color: rgba(6, 182, 212, 0.7);
+      }
+      .highlight-dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #64ffda;
+        box-shadow: 0 0 8px #64ffda;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="slide-container flex flex-col items-center text-white relative overflow-hidden"
+    >
+      <!-- Circuit pattern background -->
+      <div class="circuit-pattern">
+        <svg
+          height="100%"
+          viewbox="0 0 1280 720"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <pattern
+            height="100"
+            id="circuit"
+            patternunits="userSpaceOnUse"
+            width="100"
+          >
+            <path
+              d="M20 10 L80 10 L80 20 L90 20 L90 80 L80 80 L80 90 L20 90 L20 80 L10 80 L10 20 L20 20 Z"
+              fill="none"
+              stroke="#0284c7"
+              stroke-width="1"
+            ></path>
+            <path
+              d="M30 30 L70 30 L70 70 L30 70 Z"
+              fill="none"
+              stroke="#0284c7"
+              stroke-width="1"
+            ></path>
+            <circle
+              cx="50"
+              cy="50"
+              fill="none"
+              r="10"
+              stroke="#0284c7"
+              stroke-width="1"
+            ></circle>
+            <line
+              stroke="#0284c7"
+              stroke-width="1"
+              x1="0"
+              x2="10"
+              y1="50"
+              y2="50"
+            ></line>
+            <line
+              stroke="#0284c7"
+              stroke-width="1"
+              x1="90"
+              x2="100"
+              y1="50"
+              y2="50"
+            ></line>
+            <line
+              stroke="#0284c7"
+              stroke-width="1"
+              x1="50"
+              x2="50"
+              y1="0"
+              y2="10"
+            ></line>
+            <line
+              stroke="#0284c7"
+              stroke-width="1"
+              x1="50"
+              x2="50"
+              y1="90"
+              y2="100"
+            ></line>
+          </pattern>
+          <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+        </svg>
+      </div>
+      <!-- Content wrapper -->
+      <div class="content-wrapper w-full h-full flex flex-col px-10 py-8">
+        <!-- Title -->
+        <div class="title-content mb-4">
+          <h1 class="text-4xl font-bold text-center">
+            <span class="text-cyan-400">How QLED Works</span>
+            <span class="text-white">: Layer-by-Layer</span>
+          </h1>
+        </div>
+        <!-- Comparison section -->
+        <div class="comparison-container">
+          <!-- LCD Structure -->
+          <div class="diagram-container">
+            <h2 class="text-xl font-semibold mb-3 text-blue-400">
+              LCD Structure Diagram
+            </h2>
+            <!-- Visual diagram -->
+            <div class="display-structure">
+              <div class="display-layer lcd-backlight"></div>
+              <div class="display-layer lcd-polarizer1"></div>
+              <div class="display-layer lcd-liquid-crystal"></div>
+              <div class="display-layer lcd-polarizer2"></div>
+              <div class="display-layer lcd-color-filter"></div>
+            </div>
+            <!-- Layer descriptions -->
+            <div class="layer-descriptions">
+              <div class="layer-item lcd-layer-1">
+                <div class="layer-indicator lcd-indicator"></div>
+                <span class="text-sm">LCD Color Filter</span>
+              </div>
+              <div class="layer-item lcd-layer-2">
+                <div class="layer-indicator lcd-indicator"></div>
+                <span class="text-sm">Polarizer</span>
+              </div>
+              <div class="layer-item lcd-layer-3">
+                <div class="layer-indicator lcd-indicator"></div>
+                <span class="text-sm">Liquid Crystal Layer</span>
+              </div>
+              <div class="layer-item lcd-layer-4">
+                <div class="layer-indicator lcd-indicator"></div>
+                <span class="text-sm">Polarizer</span>
+              </div>
+              <div class="layer-item lcd-layer-5">
+                <div class="layer-indicator lcd-indicator"></div>
+                <span class="text-sm">White LED Backlight</span>
+              </div>
+            </div>
+          </div>
+          <!-- QD Structure -->
+          <div class="diagram-container">
+            <h2 class="text-xl font-semibold mb-3 text-cyan-400">
+              QD Display Structure Diagram
+            </h2>
+            <!-- Visual diagram -->
+            <div class="display-structure">
+              <div class="display-layer qd-backlight"></div>
+              <div class="display-layer qd-enhancement-film"></div>
+              <div class="display-layer qd-lcd-panel"></div>
+              <div class="display-layer qd-color-filter"></div>
+              <div id="quantum-dots"></div>
+            </div>
+            <!-- Layer descriptions -->
+            <div class="layer-descriptions">
+              <div class="layer-item qd-layer-1">
+                <div class="layer-indicator qd-indicator"></div>
+                <span class="text-sm">Color Filters</span>
+              </div>
+              <div class="layer-item qd-layer-2">
+                <div class="layer-indicator qd-indicator"></div>
+                <span class="text-sm">LCD Panel (Controls Light)</span>
+              </div>
+              <div class="layer-item qd-layer-3">
+                <div class="layer-indicator qd-indicator"></div>
+                <span class="text-sm">Quantum Dot Enhancement Film</span>
+              </div>
+              <div class="layer-item qd-layer-4">
+                <div class="layer-indicator qd-indicator"></div>
+                <span class="text-sm">Blue LED Backlight</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Explanation section -->
+        <div class="explanation-content mt-8 px-6">
+          <div class="bg-opacity-30 bg-gray-900 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold text-cyan-300 mb-2">
+              Key Principles of QLED Technology
+            </h3>
+            <ul class="text-gray-200 text-sm space-y-2">
+              <li>
+                <span class="text-cyan-400 font-semibold"
+                  >Blue LED Backlight:</span
+                >
+                Provides the initial light source.
+              </li>
+              <li>
+                <span class="text-cyan-400 font-semibold"
+                  >Quantum Dot Enhancement Film:</span
+                >
+                Contains quantum dots that convert blue light to red and green.
+              </li>
+              <li>
+                <span class="text-cyan-400 font-semibold">LCD Panel:</span>
+                Controls which pixels light up (light transmission).
+              </li>
+              <li>
+                <span class="text-cyan-400 font-semibold">Color Filters:</span>
+                Uses traditional RGB filters for final color production.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Create quantum dots in the QD enhancement film
+      const dotsContainer = document.getElementById("quantum-dots");
+      if (dotsContainer) {
+        for (let i = 0; i < 30; i++) {
+          const dot = document.createElement("div");
+          dot.className = "highlight-dot";
+
+          // Position dots in the quantum dot enhancement film
+          dot.style.left = `${10 + Math.random() * 80}%`;
+          dot.style.bottom = `${45 + Math.random() * 25}px`;
+
+          // Random opacity and size for more realistic effect
+          dot.style.opacity = 0.5 + Math.random() * 0.5;
+          dot.style.width = `${3 + Math.random() * 4}px`;
+          dot.style.height = dot.style.width;
+
+          dotsContainer.appendChild(dot);
+        }
+      }
+    </script>
+  </body>
+</html>

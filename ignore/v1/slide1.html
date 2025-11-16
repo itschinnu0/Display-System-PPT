@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <title>QLED Display Technology</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .slide-container {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #051c2c;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+      }
+      .title-text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        animation: fadeInDown 1.2s ease-out;
+      }
+      .subtitle-text {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        animation: fadeInUp 1.2s ease-out;
+      }
+      .qled-accent {
+        color: #00b2e3;
+      }
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 28, 44, 0.85);
+        z-index: -1;
+      }
+      .tech-circle {
+        position: absolute;
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .tech-circle-1 {
+        width: 30vw;
+        height: 30vw;
+        right: -10vw;
+        top: -10vw;
+        animation: pulse 8s infinite alternate;
+      }
+      .tech-circle-2 {
+        width: 25vw;
+        height: 25vw;
+        left: -8vw;
+        bottom: -10vw;
+        animation: pulse 12s infinite alternate-reverse;
+      }
+      .quantum-dot-image {
+        animation: fadeIn 1.5s ease-out;
+        box-shadow: 0 4px 20px rgba(0, 178, 227, 0.2);
+        max-height: 30vh;
+        object-fit: contain;
+        width: auto;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col">
+      <div class="background-overlay"></div>
+      <div class="tech-circle tech-circle-1"></div>
+      <div class="tech-circle tech-circle-2"></div>
+      <!-- Header section with title -->
+      <div
+        class="flex-grow flex flex-col items-center justify-center pt-16 px-16"
+      >
+        <h1 class="title-text text-5xl mb-4 text-center leading-tight">
+          <span class="qled-accent">QLED</span> Display Technology
+        </h1>
+
+        <p
+          class="subtitle-text text-xl text-gray-300 max-w-3xl text-center mb-12"
+        >
+          A professional exploration of quantum dot technology, performance
+          advantages, and innovation trajectory
+        </p>
+      </div>
+      <!-- Visual section with image -->
+      <div class="flex justify-center mb-12">
+        <img
+          alt="QLED Quantum Dot Display Architecture"
+          class="quantum-dot-image rounded-lg border border-blue-400"
+          src="https://www.yankodesign.com/images/design_news/2024/02/top-10-game-changing-materials-that-are-shaping-the-design-and-technology-world-in-2024/game_changing_materials_2024_3.jpg"
+          style="max-height: 280px; object-fit: contain"
+          data-height-listener-added="true"
+        />
+      </div>
+      <!-- Footer with date -->
+    </div>
+  </body>
+</html>

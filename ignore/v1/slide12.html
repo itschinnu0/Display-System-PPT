@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>QLED Display Technology - Conclusion</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .slide-container {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #051c2c;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+      }
+      .section-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        animation: fadeInDown 1.2s ease-out;
+      }
+      .section-subtitle {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .qled-accent {
+        color: #00b2e3;
+      }
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 28, 44, 0.85);
+        z-index: -1;
+      }
+      .tech-circle {
+        position: absolute;
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .tech-circle-1 {
+        width: 400px;
+        height: 400px;
+        right: -100px;
+        top: -100px;
+        animation: pulse 8s infinite alternate;
+      }
+      .tech-circle-2 {
+        width: 300px;
+        height: 300px;
+        left: -80px;
+        bottom: -100px;
+        animation: pulse 12s infinite alternate-reverse;
+      }
+      .conclusion-card {
+        background-color: rgba(0, 40, 70, 0.5);
+        border-left: 3px solid #00b2e3;
+        animation: slideIn 0.7s ease-out;
+      }
+      .conclusion-icon {
+        color: #00b2e3;
+        animation: zoomIn 1s ease-out;
+      }
+      .market-projection {
+        background-color: rgba(0, 178, 227, 0.15);
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        animation: fadeInUp 1s ease-out;
+      }
+      .projection-number {
+        color: #00b2e3;
+        font-weight: 700;
+        animation: countUp 2s ease-out;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes countUp {
+        from {
+          opacity: 0.3;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col">
+      <div class="background-overlay"></div>
+      <div class="tech-circle tech-circle-1"></div>
+      <div class="tech-circle tech-circle-2"></div>
+      <!-- Header section with title -->
+      <div class="px-16 pt-12">
+        <h1 class="section-title text-4xl mb-2">
+          Conclusion &amp; <span class="qled-accent">Market Outlook</span>
+        </h1>
+        <p class="section-subtitle text-lg text-gray-300 mb-8">
+          From Nobel Prize-winning science to industry-changing display
+          technology
+        </p>
+      </div>
+      <!-- Market projection highlight -->
+      <div class="px-16 mb-6">
+        <div
+          class="market-projection rounded-lg p-6 flex items-center justify-between"
+        >
+          <div>
+            <h3 class="text-xl font-semibold mb-1">
+              QLED Market Growth Projection
+            </h3>
+            <p class="text-gray-300">
+              Compound Annual Growth Rate (CAGR): 9.45%
+            </p>
+          </div>
+          <div class="text-right">
+            <div class="projection-number text-4xl">$98.41 Billion</div>
+            <p class="text-sm text-gray-400">Market Size by 2034</p>
+          </div>
+        </div>
+      </div>
+      <!-- Content section with conclusion points -->
+      <div class="flex-grow px-16 py-4">
+        <div class="grid grid-cols-2 gap-6">
+          <div class="conclusion-card p-5 rounded-lg delay-100">
+            <div class="flex items-start mb-2">
+              <i class="conclusion-icon fas fa-medal text-2xl mr-3 mt-1"></i>
+              <h3 class="text-xl font-semibold">Scientific Excellence</h3>
+            </div>
+            <p class="text-gray-300">
+              Nobel Prize-winning quantum dot technology transformed from
+              laboratory discovery to mainstream display innovation
+            </p>
+          </div>
+          <div class="conclusion-card p-5 rounded-lg delay-200">
+            <div class="flex items-start mb-2">
+              <i class="conclusion-icon fas fa-tv text-2xl mr-3 mt-1"></i>
+              <h3 class="text-xl font-semibold">Market Dominance</h3>
+            </div>
+            <p class="text-gray-300">
+              Samsung's 19 years of consecutive TV market leadership
+              strengthened by QLED technology advantages
+            </p>
+          </div>
+          <div class="conclusion-card p-5 rounded-lg delay-300">
+            <div class="flex items-start mb-2">
+              <i class="conclusion-icon fas fa-leaf text-2xl mr-3 mt-1"></i>
+              <h3 class="text-xl font-semibold">Environmental Progress</h3>
+            </div>
+            <p class="text-gray-300">
+              Cadmium-free quantum dots demonstrate how innovation can enhance
+              performance while reducing environmental impact
+            </p>
+          </div>
+          <div class="conclusion-card p-5 rounded-lg delay-400">
+            <div class="flex items-start mb-2">
+              <i
+                class="conclusion-icon fas fa-lightbulb text-2xl mr-3 mt-1"
+              ></i>
+              <h3 class="text-xl font-semibold">Future Innovation</h3>
+            </div>
+            <p class="text-gray-300">
+              Self-emissive QLED and Mini-LED integration point to exciting
+              next-generation display technologies
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Footer section -->
+      <div class="px-16 py-4 mt-2">
+        <p class="section-subtitle text-gray-300 text-center">
+          QLED technology will remain at the forefront of display innovation,
+          delivering exceptional brightness, color, and durability to consumers
+          worldwide
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

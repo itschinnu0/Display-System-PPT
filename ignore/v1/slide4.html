@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Science of Quantum Dots</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .slide-container {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #051c2c;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+      }
+      .content-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        animation: fadeInDown 1.2s ease-out;
+      }
+      .content-subtitle {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .qled-accent {
+        color: #00b2e3;
+      }
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 28, 44, 0.85);
+        z-index: -1;
+      }
+      .tech-circle {
+        position: absolute;
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .tech-circle-1 {
+        width: 30vw;
+        height: 30vw;
+        right: -10vw;
+        top: -10vw;
+        animation: pulse 8s infinite alternate;
+      }
+      .tech-circle-2 {
+        width: 30vw;
+        height: 30vw;
+        right: -8vw;
+        top: -10vw;
+        animation: pulse 12s infinite alternate-reverse;
+      }
+      .quantum-dot-diagram {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1.5s ease-out;
+      }
+      .info-card {
+        background-color: rgba(0, 40, 70, 0.5);
+        border-left: 3px solid #00b2e3;
+        border-radius: 4px;
+        padding: 15px 20px;
+        margin-bottom: 16px;
+        animation: slideInRight 0.8s ease-out;
+      }
+      .arrow-connection {
+        color: #00b2e3;
+        font-size: 24px;
+        animation: pulse 2s infinite;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+      .delay-600 {
+        animation-delay: 0.6s;
+      }
+
+      .quantum-dot-size {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .dot {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        font-weight: bold;
+        animation: fadeIn 1s ease-out;
+      }
+      .dot-small {
+        background-color: #4d84ff;
+        width: 40px;
+        height: 40px;
+      }
+      .dot-medium {
+        background-color: #50c878;
+        width: 60px;
+        height: 60px;
+      }
+      .dot-large {
+        background-color: #ff5252;
+        width: 80px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col">
+      <div class="background-overlay"></div>
+      <div class="tech-circle tech-circle-1"></div>
+      <div class="tech-circle tech-circle-2"></div>
+      <!-- Header section with title -->
+      <div class="px-16 pt-10">
+        <h1 class="content-title text-4xl mb-2">
+          The Science of <span class="qled-accent">Quantum Dots</span>
+        </h1>
+        <!-- <p class="content-subtitle text-lg text-gray-300 mb-6">
+          Understanding the quantum confinement effect that powers QLED
+          technology
+        </p> -->
+      </div>
+      <!-- Main content section with diagram and explanation -->
+      <div class="flex-grow px-16 py-4">
+        <div class="flex flex-row space-x-8">
+          <!-- Left side: Quantum dot diagram -->
+          <!-- <div class="w-1/2 h-1/2">
+            <div
+              class="quantum-dot-diagram flex items-center justify-center"
+            >
+              <img
+                alt="Quantum Dot Structure"
+                class="object-contain"
+                src="./unnamed.jpg"
+
+              />
+            </div>
+          </div> -->
+          <!-- Right side: Explanation -->
+          <div class="h-1/4">
+            <div class="info-card delay-100">
+              <h3 class="text-xl font-semibold qled-accent">
+                Quantum Confinement Effect
+              </h3>
+              <p class="text-gray-300 mt-1">
+                When semiconductor materials are reduced to nanoscale dimensions
+                (2-10 nanometers), electrons become confined in a "quantum box"
+                smaller than their natural orbit radius.
+              </p>
+            </div>
+            <div class="info-card delay-200">
+              <h3 class="text-xl font-semibold qled-accent">
+                Size-Dependent Properties
+              </h3>
+              <p class="text-gray-300 mt-1">
+                As quantum dot size decreases, the energy gap increases,
+                resulting in bluer light emission. Larger quantum dots emit
+                redder colors.
+              </p>
+            </div>
+            <div class="info-card delay-300">
+              <h3 class="text-xl font-semibold qled-accent">
+                Precise Color Control
+              </h3>
+              <p class="text-gray-300 mt-1">
+                This size-tunable property allows manufacturers to precisely
+                control emission colors by adjusting quantum dot diameter during
+                synthesis.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Size to color relationship diagram -->
+        <div class="mt-3 bg-opacity-50 bg-gray-800 p-4 rounded-lg">
+          <h3 class="text-center text-xl mb-2">
+            Quantum Dot Size &amp; Color Relationship
+          </h3>
+          <div class="quantum-dot-size">
+            <div class="flex flex-col items-center delay-400">
+              <div class="dot dot-small">2nm</div>
+              <p class="mt-2 text-center">Blue Light<br />(450-495nm)</p>
+            </div>
+            <div class="arrow-connection">⇄</div>
+            <div class="flex flex-col items-center delay-500">
+              <div class="dot dot-medium">5nm</div>
+              <p class="mt-2 text-center">Green Light<br />(495-570nm)</p>
+            </div>
+            <div class="arrow-connection">⇄</div>
+            <div class="flex flex-col items-center delay-600">
+              <div class="dot dot-large">8nm</div>
+              <p class="mt-2 text-center">Red Light<br />(620-750nm)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer section -->
+      <div class="px-16 py-4 mb-2">
+        <p class="content-subtitle text-sm text-gray-400 text-center">
+          Quantum dots' precisely tunable light emission enables QLED's
+          exceptional color performance
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

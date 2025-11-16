@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: "Montserrat", sans-serif;
+        color: #fff;
+        background: linear-gradient(135deg, #012a4a 0%, #013a63 100%);
+      }
+      .slide-container {
+        width: 100vw;
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+      .slide-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .slide-content {
+        padding: 60px;
+        position: relative;
+        z-index: 1;
+      }
+      .title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: #4cc9f0;
+      }
+      .timeline {
+        position: relative;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 2px solid rgba(76, 201, 240, 0.3);
+      }
+      .timeline-item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 30px;
+      }
+      .timeline-item:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #4cc9f0;
+      }
+      .timeline-year {
+        font-size: 24px;
+        font-weight: 600;
+        color: #4cc9f0;
+        margin-bottom: 5px;
+      }
+      .timeline-content {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      .circuit-pattern {
+        position: absolute;
+        right: -150px;
+        bottom: -150px;
+        width: 500px;
+        height: 500px;
+        opacity: 0.15;
+        z-index: -1;
+      }
+      .scientist-cards {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .scientist-card {
+        width: 31%;
+        background-color: rgba(1, 58, 99, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #4cc9f0;
+      }
+      .scientist-name {
+        font-size: 20px;
+        font-weight: 600;
+        color: #4cc9f0;
+        margin-bottom: 10px;
+      }
+      .nobel-prize {
+        margin-top: 40px;
+        background-color: rgba(76, 201, 240, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        border-left: 4px solid #4cc9f0;
+      }
+      .nobel-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="slide-background">
+        <svg
+          class="circuit-pattern"
+          viewbox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M40,40 L160,40 L160,160 L40,160 Z"
+            fill="none"
+            stroke="#4cc9f0"
+            stroke-width="1"
+          ></path>
+          <circle cx="40" cy="40" fill="#4cc9f0" r="3"></circle>
+          <circle cx="160" cy="40" fill="#4cc9f0" r="3"></circle>
+          <circle cx="160" cy="160" fill="#4cc9f0" r="3"></circle>
+          <circle cx="40" cy="160" fill="#4cc9f0" r="3"></circle>
+          <path
+            d="M40,100 L70,100 L70,120 L100,120 L100,80 L130,80 L130,100 L160,100"
+            fill="none"
+            stroke="#4cc9f0"
+            stroke-width="1"
+          ></path>
+          <path
+            d="M100,40 L100,70"
+            fill="none"
+            stroke="#4cc9f0"
+            stroke-width="1"
+          ></path>
+          <path
+            d="M100,160 L100,130"
+            fill="none"
+            stroke="#4cc9f0"
+            stroke-width="1"
+          ></path>
+        </svg>
+      </div>
+      <div class="slide-content">
+        <h1 class="title">History &amp; Nobel Prize Discovery</h1>
+        <div class="scientist-cards">
+          <div class="scientist-card">
+            <div class="scientist-name">Alexei Ekimov</div>
+            <div class="timeline-year">1981</div>
+            <div class="timeline-content">
+              First discovered quantum dots while studying colored crystals in
+              glass
+            </div>
+          </div>
+          <div class="scientist-card">
+            <div class="scientist-name">Alexander Efros</div>
+            <div class="timeline-year">1982</div>
+            <div class="timeline-content">
+              Explained the science behind how quantum dots work
+            </div>
+          </div>
+          <div class="scientist-card">
+            <div class="scientist-name">Louis Brus</div>
+            <div class="timeline-year">1983</div>
+            <div class="timeline-content">
+              Created quantum dots in liquid form at Bell Labs
+            </div>
+          </div>
+        </div>
+        <div class="nobel-prize">
+          <div class="nobel-title">2023 Nobel Prize in Chemistry</div>
+          <div class="timeline-content">
+            All three scientists won the 2023 Nobel Prize in Chemistry for their
+            groundbreaking work in quantum dots, which led to QLED technology
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2001</div>
+            <div class="timeline-content">
+              Samsung started researching quantum dots for displays
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2014</div>
+            <div class="timeline-content">
+              Samsung created cadmium-free quantum dots, solving environmental
+              safety problems
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-content">
+              Samsung launched the first commercial QLED TVs (SUHD series)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>QLED vs OLED Comparison</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .slide-container {
+        width: 100%;
+        min-height: 100%;
+        background-color: #051c2c;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+      }
+      .content-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        animation: fadeInDown 1.2s ease-out;
+      }
+      .content-subtitle {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .qled-accent {
+        color: #00b2e3;
+      }
+      .oled-accent {
+        color: #e3506e;
+      }
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 28, 44, 0.85);
+        z-index: -1;
+      }
+      .tech-circle {
+        position: absolute;
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .tech-circle-1 {
+        width: 400px;
+        height: 400px;
+        right: -100px;
+        top: -100px;
+        animation: pulse 8s infinite alternate;
+      }
+      .tech-circle-2 {
+        width: 300px;
+        height: 300px;
+        left: -80px;
+        bottom: -100px;
+        animation: pulse 12s infinite alternate-reverse;
+      }
+      .chart-container {
+        width: 100%;
+        height: 360px;
+        animation: fadeIn 1.2s ease-out;
+      }
+      .comparison-item {
+        animation: slideInRight 0.8s ease-out;
+      }
+      .chart-legend-item {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+      }
+      .legend-color {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        border-radius: 3px;
+      }
+      .qled-color {
+        background-color: #00b2e3;
+      }
+      .oled-color {
+        background-color: #e3506e;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .comparison-table {
+        width: 100%;
+        animation: fadeIn 1s ease-out;
+      }
+      .comparison-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .winner-qled {
+        color: #00b2e3;
+        font-weight: 600;
+      }
+      .winner-oled {
+        color: #e3506e;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col">
+      <div class="background-overlay"></div>
+      <div class="tech-circle tech-circle-1"></div>
+      <div class="tech-circle tech-circle-2"></div>
+      <!-- Header section with title -->
+      <div class="px-16 pt-7">
+        <h1 class="content-title text-4xl mb-2">
+          <span class="qled-accent">QLED</span> vs
+          <span class="oled-accent">OLED</span>: Technology Comparison
+        </h1>
+      </div>
+      <!-- Chart section -->
+      <div class="flex-grow px-16 py-2">
+        <div class="flex justify-center items-center mb-4">
+          <div class="chart-legend-item">
+            <div class="legend-color qled-color"></div>
+            <span>QLED</span>
+          </div>
+          <div class="chart-legend-item">
+            <div class="legend-color oled-color"></div>
+            <span>OLED</span>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="comparisonChart"></canvas>
+        </div>
+        <div class="grid grid-cols-2 gap-8 mt-6">
+          <div
+            class="comparison-item delay-100 bg-opacity-30 bg-blue-900 p-4 rounded-lg"
+          >
+            <h3 class="text-lg font-semibold mb-2 qled-accent">
+              <i class="fas fa-check-circle mr-2"></i>QLED Advantages
+            </h3>
+            <ul class="text-sm text-gray-300 list-disc pl-5">
+              <li>Superior brightness (up to 4,000+ nits)</li>
+              <li>Longer lifespan with consistent performance</li>
+              <li>Better burn-in resistance for static content</li>
+              <li>More cost-effective manufacturing</li>
+              <li>Ideal for bright rooms and HDR content</li>
+            </ul>
+          </div>
+          <div
+            class="comparison-item delay-200 bg-opacity-30 bg-red-900 p-4 rounded-lg"
+          >
+            <h3 class="text-lg font-semibold mb-2 oled-accent">
+              <i class="fas fa-check-circle mr-2"></i>OLED Advantages
+            </h3>
+            <ul class="text-sm text-gray-300 list-disc pl-5">
+              <li>Perfect black levels (pixel-level dimming)</li>
+              <li>Superior gaming performance (faster response)</li>
+              <li>Better viewing angles for wider seating</li>
+              <li>More energy efficient in typical content</li>
+              <li>Ideal for dark room movie watching</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Footer section -->
+      <div class="px-16 py-4 mb-2">
+        <p class="content-subtitle text-sm text-gray-400 text-center">
+          Each technology has distinct advantages, making them suitable for
+          different viewing environments and content types
+        </p>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById("comparisonChart").getContext("2d");
+
+        const chart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: [
+              "Peak Brightness",
+              "Color Accuracy",
+              "Black Levels",
+              "Energy Efficiency",
+              "View Angles",
+              "Burn Resistance",
+              "Cost Effectiveness",
+              "Lifespan",
+              "Gaming Performance",
+            ],
+            datasets: [
+              {
+                label: "QLED",
+                data: [9, 8, 7, 8, 6, 10, 8, 9, 7],
+                backgroundColor: "#00b2e3",
+                borderWidth: 0,
+              },
+              {
+                label: "OLED",
+                data: [7, 9, 10, 9, 9, 6, 6, 7, 9],
+                backgroundColor: "#e3506e",
+                borderWidth: 0,
+              },
+            ],
+          },
+          options: {
+            indexAxis: "y",
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                min: 0,
+                max: 10,
+                grid: {
+                  color: "rgba(255, 255, 255, 0.1)",
+                },
+                ticks: {
+                  color: "rgba(255, 255, 255, 0.7)",
+                },
+              },
+              y: {
+                grid: {
+                  display: false,
+                },
+                ticks: {
+                  color: "rgba(255, 255, 255, 0.7)",
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return context.dataset.label + ": " + context.raw + "/10";
+                  },
+                },
+              },
+            },
+            animation: {
+              duration: 1500,
+              easing: "easeOutQuart",
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>QLED Manufacturing: Cadmium-Free Innovation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .slide-container {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #051c2c;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+      }
+      .content-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        animation: fadeInDown 1.2s ease-out;
+      }
+      .content-subtitle {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .qled-accent {
+        color: #00b2e3;
+      }
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 28, 44, 0.85);
+        z-index: -1;
+      }
+      .tech-circle {
+        position: absolute;
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .tech-circle-1 {
+        width: 400px;
+        height: 400px;
+        right: -100px;
+        top: -100px;
+        animation: pulse 8s infinite alternate;
+      }
+      .tech-circle-2 {
+        width: 300px;
+        height: 300px;
+        left: -80px;
+        bottom: -100px;
+        animation: pulse 12s infinite alternate-reverse;
+      }
+      .feature-card {
+        background-color: rgba(0, 40, 70, 0.5);
+        border-left: 3px solid #00b2e3;
+        border-radius: 4px;
+        padding: 15px;
+        margin-bottom: 15px;
+        animation: slideInRight 0.8s ease-out;
+      }
+      .innovation-timeline {
+        position: relative;
+        padding-left: 30px;
+      }
+      .innovation-item {
+        position: relative;
+        margin-bottom: 20px;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .innovation-dot {
+        position: absolute;
+        left: -30px;
+        top: 8px;
+        width: 16px;
+        height: 16px;
+        background-color: #00b2e3;
+        border-radius: 50%;
+        animation: zoomIn 0.5s ease-out;
+      }
+      .eco-badge {
+        display: inline-block;
+        background-color: rgba(0, 178, 227, 0.2);
+        color: #00b2e3;
+        border: 1px solid #00b2e3;
+        border-radius: 16px;
+        padding: 4px 12px;
+        font-size: 14px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        animation: fadeIn 1s ease-out;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col">
+      <div class="background-overlay"></div>
+      <div class="tech-circle tech-circle-1"></div>
+      <div class="tech-circle tech-circle-2"></div>
+      <!-- Header section with title -->
+      <div class="px-16 pt-10">
+        <h1 class="content-title text-4xl mb-2">
+          Manufacturing: From
+          <span class="qled-accent">Lab to Living Room</span>
+        </h1>
+        <p class="content-subtitle text-lg text-gray-300 mb-6">
+          Samsung's cadmium-free breakthrough and sustainable production
+          innovations
+        </p>
+      </div>
+      <!-- Main content section -->
+      <div class="flex-grow px-16 py-4">
+        <div class="flex flex-row">
+          <!-- Left column: Cadmium-free innovation -->
+          <div class="w-1/2 pr-6">
+            <h2 class="text-xl font-semibold mb-4 qled-accent">
+              The Cadmium-Free Breakthrough
+            </h2>
+            <div class="feature-card delay-100">
+              <h3 class="text-lg font-medium">2014 Samsung Innovation</h3>
+              <p class="text-gray-300">
+                Samsung developed the world's first commercially viable
+                cadmium-free quantum dots, replacing toxic heavy metals with
+                indium phosphide (InP)
+              </p>
+            </div>
+            <div class="feature-card delay-200">
+              <h3 class="text-lg font-medium">Environmental Impact</h3>
+              <p class="text-gray-300">
+                Eliminated toxic cadmium while maintaining optical performance,
+                enabling widespread commercial adoption and regulatory
+                compliance
+              </p>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium mb-3">
+                Compliance &amp; Certifications
+              </h3>
+              <div class="flex flex-wrap">
+                <span class="eco-badge delay-100"
+                  ><i class="fas fa-check-circle mr-1"></i> RoHS Directive</span
+                >
+                <span class="eco-badge delay-200"
+                  ><i class="fas fa-leaf mr-1"></i> Eco-friendly</span
+                >
+                <span class="eco-badge delay-300"
+                  ><i class="fas fa-globe mr-1"></i> Global Standards</span
+                >
+                <span class="eco-badge delay-400"
+                  ><i class="fas fa-recycle mr-1"></i> Sustainable</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Right column: Manufacturing process -->
+          <div class="w-1/2 pl-6">
+            <h2 class="text-xl font-semibold mb-4 qled-accent">
+              Manufacturing Challenges
+            </h2>
+            <div class="innovation-timeline">
+              <div class="innovation-item delay-100">
+                <div class="innovation-dot"></div>
+                <h3 class="text-lg font-medium">Production Yields</h3>
+                <p class="text-gray-300">
+                  Current quantum dot production achieves 60-70% yield compared
+                  to 90%+ for conventional displays, with ongoing improvements
+                </p>
+              </div>
+              <div class="innovation-item delay-200">
+                <div class="innovation-dot"></div>
+                <h3 class="text-lg font-medium">Precise Synthesis</h3>
+                <p class="text-gray-300">
+                  Requires exacting temperature control and atmospheric
+                  conditions to ensure quantum dot uniformity and color
+                  precision
+                </p>
+              </div>
+              <div class="innovation-item delay-300">
+                <div class="innovation-dot"></div>
+                <h3 class="text-lg font-medium">Material Costs</h3>
+                <p class="text-gray-300">
+                  40-45% of production costs attributed to high-purity precursor
+                  materials needed for quantum dot synthesis
+                </p>
+              </div>
+              <div class="innovation-item delay-400">
+                <div class="innovation-dot"></div>
+                <h3 class="text-lg font-medium">Facility Investment</h3>
+                <p class="text-gray-300">
+                  $30-50 million per production line for facility conversion,
+                  but economies of scale improving with growing market demand
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer section -->
+      <div class="px-16 py-4 mb-2">
+        <p class="content-subtitle text-sm text-gray-400 text-center">
+          Samsung's cadmium-free quantum dots transform display technology while
+          protecting our environment
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

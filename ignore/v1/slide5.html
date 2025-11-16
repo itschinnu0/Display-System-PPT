@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Inside the QLED: Display Architecture</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .slide-container {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #051c2c;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+      }
+      .content-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        animation: fadeInDown 1.2s ease-out;
+      }
+      .content-subtitle {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .qled-accent {
+        color: #00b2e3;
+      }
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 28, 44, 0.85);
+        z-index: -1;
+      }
+      .tech-circle {
+        position: absolute;
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .tech-circle-1 {
+        width: 400px;
+        height: 400px;
+        right: -100px;
+        top: -100px;
+        animation: pulse 8s infinite alternate;
+      }
+      .tech-circle-2 {
+        width: 300px;
+        height: 300px;
+        left: -80px;
+        bottom: -100px;
+        animation: pulse 12s infinite alternate-reverse;
+      }
+      .layer-container {
+        position: relative;
+        height: 400px;
+      }
+      .layer-item {
+        position: relative;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-left: 3px solid #00b2e3;
+        background-color: rgba(0, 40, 70, 0.5);
+        border-radius: 4px;
+        animation: slideInRight 0.8s ease-out;
+      }
+      .layer-number {
+        position: absolute;
+        left: -40px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        background-color: #00b2e3;
+        color: #051c2c;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+      .layer-diagram {
+        width: 500px;
+        height: 400px;
+        background-color: rgba(0, 40, 70, 0.3);
+        border-radius: 8px;
+        position: relative;
+      }
+      .diagram-layer {
+        position: absolute;
+        left: 50px;
+        width: 400px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        animation: fadeIn 1s ease-out;
+      }
+      .layer-1 {
+        height: 50px;
+        bottom: 40px;
+        background-color: rgba(30, 64, 175, 0.7);
+        animation-delay: 0.1s;
+      }
+      .layer-2 {
+        height: 60px;
+        bottom: 90px;
+        background-color: rgba(0, 178, 227, 0.7);
+        animation-delay: 0.3s;
+      }
+      .layer-3 {
+        height: 60px;
+        bottom: 150px;
+        background-color: rgba(59, 130, 246, 0.6);
+        animation-delay: 0.5s;
+      }
+      .layer-4 {
+        height: 50px;
+        bottom: 210px;
+        background-color: rgba(96, 165, 250, 0.6);
+        animation-delay: 0.7s;
+      }
+      .layer-5 {
+        height: 60px;
+        bottom: 260px;
+        background-color: rgba(147, 197, 253, 0.5);
+        animation-delay: 0.9s;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes growRight {
+        from {
+          width: 0;
+        }
+        to {
+          width: 80px;
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col">
+      <div class="background-overlay"></div>
+      <div class="tech-circle tech-circle-1"></div>
+      <div class="tech-circle tech-circle-2"></div>
+      <!-- Header section with title -->
+      <div class="px-16 pt-10">
+        <h1 class="content-title text-4xl mb-2">
+          Inside the <span class="qled-accent">QLED</span>: Display Architecture
+        </h1>
+        <p class="content-subtitle text-lg text-gray-300 mb-6">
+          How quantum dot technology transforms conventional displays into
+          vibrant color machines
+        </p>
+      </div>
+      <!-- Main content section -->
+      <div class="flex-grow px-16 py-2 flex">
+        <!-- Left side: Diagram -->
+        <div class="w-1/2 flex items-center justify-center">
+          <div class="layer-diagram">
+            <div class="diagram-layer layer-1">Blue LED Backlight</div>
+            <div class="diagram-layer layer-2">
+              Quantum Dot Enhancement Film (QDEF)
+            </div>
+            <div class="diagram-layer layer-3">LCD Panel</div>
+            <div class="diagram-layer layer-4">Color Filters</div>
+            <div class="diagram-layer layer-5">Polarizers &amp; TFT Array</div>
+          </div>
+        </div>
+        <!-- Right side: Layer explanations -->
+        <div class="w-1/2">
+          <div class="layer-item delay-100">
+            <div class="layer-number">1</div>
+            <h3 class="text-lg font-semibold">Blue LED Backlight</h3>
+            <p class="text-gray-300">
+              Energy source that provides blue light for the quantum dot
+              conversion process
+            </p>
+          </div>
+          <div class="layer-item delay-200">
+            <div class="layer-number">2</div>
+            <h3 class="text-lg font-semibold">Quantum Dot Enhancement Film</h3>
+            <p class="text-gray-300">
+              Contains quantum dots that convert blue light to pure red and
+              green wavelengths
+            </p>
+          </div>
+          <div class="layer-item delay-300">
+            <div class="layer-number">3</div>
+            <h3 class="text-lg font-semibold">LCD Panel</h3>
+            <p class="text-gray-300">
+              Controls light transmission to create the image pixels
+            </p>
+          </div>
+          <div class="layer-item delay-400">
+            <div class="layer-number">4</div>
+            <h3 class="text-lg font-semibold">Color Filters</h3>
+            <p class="text-gray-300">
+              Traditional RGB filters for final color production and refinement
+            </p>
+          </div>
+          <div class="layer-item delay-500">
+            <div class="layer-number">5</div>
+            <h3 class="text-lg font-semibold">Polarizers &amp; TFT Array</h3>
+            <p class="text-gray-300">
+              Standard LCD components for light management and pixel control
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Footer section -->
+      <div class="px-16 py-2 mb-4">
+        <p class="content-subtitle text-sm text-gray-400 text-center">
+          This hybrid architecture enables QLED displays to achieve 100% color
+          volume and support wide DCI-P3 color gamut standards
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

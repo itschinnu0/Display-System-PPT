@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #051c2c;
+        color: #ffffff;
+        margin: 0;
+        overflow: hidden;
+        width: 1280px;
+        min-height: 720px;
+      }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        position: relative;
+        overflow: hidden;
+      }
+      .tech-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.15;
+        z-index: -1;
+      }
+      .title-container {
+        background: #0a2d4a;
+        padding: 20px 40px;
+        border-left: 6px solid #00ccff;
+      }
+      .content-container {
+        padding: 30px 40px;
+      }
+      .feature-box {
+        background-color: rgba(10, 45, 74, 0.7);
+        border-radius: 10px;
+        border-left: 4px solid #00ccff;
+        transition: transform 0.3s ease;
+      }
+      .feature-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 204, 255, 0.2);
+      }
+      .icon-circle {
+        background: linear-gradient(135deg, #0056b3, #00ccff);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      .tech-dot {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #00ccff;
+        opacity: 0.3;
+        filter: blur(5px);
+        animation: pulse 3s infinite alternate;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        100% {
+          transform: scale(1.2);
+          opacity: 0.6;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="tech-background">
+        <svg viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#051c2c" height="100%" width="100%"></rect>
+          <path
+            d="M0,200 L1280,400"
+            opacity="0.3"
+            stroke="#0056b3"
+            stroke-width="0.5"
+          ></path>
+          <path
+            d="M0,400 L1280,300"
+            opacity="0.3"
+            stroke="#0056b3"
+            stroke-width="0.5"
+          ></path>
+          <path
+            d="M0,600 L1280,500"
+            opacity="0.3"
+            stroke="#0056b3"
+            stroke-width="0.5"
+          ></path>
+          <!-- Circuit patterns -->
+          <path
+            d="M100,100 L200,100 L200,200 L300,200"
+            fill="none"
+            opacity="0.2"
+            stroke="#00ccff"
+            stroke-width="0.5"
+          ></path>
+          <path
+            d="M500,300 L600,300 L600,400 L700,400"
+            fill="none"
+            opacity="0.2"
+            stroke="#00ccff"
+            stroke-width="0.5"
+          ></path>
+          <path
+            d="M900,500 L1000,500 L1000,600 L1100,600"
+            fill="none"
+            opacity="0.2"
+            stroke="#00ccff"
+            stroke-width="0.5"
+          ></path>
+        </svg>
+      </div>
+      <!-- Tech dot animations -->
+      <div
+        class="tech-dot"
+        style="
+          top: 100px;
+          left: 200px;
+          width: 40px;
+          height: 40px;
+          animation-delay: 0s;
+        "
+      ></div>
+      <div
+        class="tech-dot"
+        style="
+          top: 300px;
+          left: 900px;
+          width: 60px;
+          height: 60px;
+          animation-delay: 0.5s;
+        "
+      ></div>
+      <div
+        class="tech-dot"
+        style="
+          top: 500px;
+          left: 400px;
+          width: 50px;
+          height: 50px;
+          animation-delay: 1s;
+        "
+      ></div>
+      <div
+        class="tech-dot"
+        style="
+          top: 200px;
+          left: 1100px;
+          width: 30px;
+          height: 30px;
+          animation-delay: 1.5s;
+        "
+      ></div>
+      <!-- Title Section -->
+      <div class="title-container">
+        <h1 class="text-4xl font-bold">Future Developments</h1>
+        <p class="text-xl text-cyan-300 mt-2">
+          Next Generation QLED Technology
+        </p>
+      </div>
+      <div class="content-container">
+        <div class="grid grid-cols-2 gap-8">
+          <!-- Self-Emissive QLED -->
+          <div class="feature-box p-6">
+            <div class="flex items-center mb-4">
+              <div class="icon-circle">
+                <i class="fas fa-lightbulb text-white text-2xl"></i>
+              </div>
+              <h2 class="text-2xl font-semibold ml-4 text-cyan-300">
+                Self-Emissive QLED
+              </h2>
+            </div>
+            <ul class="space-y-3 ml-4">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span
+                  >Quantum dots light up independently (no backlight
+                  needed)</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span>Each pixel emits light directly, similar to OLED</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span>Faster response times with perfect pixel control</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span>Better contrast and viewing angles</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-exclamation-triangle text-yellow-300 mt-1 mr-2"
+                ></i>
+                <span class="text-yellow-200"
+                  >Challenge: Lifetime and manufacturing issues</span
+                >
+              </li>
+            </ul>
+            <div class="mt-4 text-center">
+              <img
+                alt="Self-emissive display concept"
+                class="rounded-lg mx-auto h-28 object-cover"
+                src="https://page.gensparksite.com/slides_images/133a5481afeb7c8bda46d3e4f3758d6c.webp"
+              />
+            </div>
+          </div>
+          <!-- MicroLED Integration -->
+          <div class="feature-box p-6">
+            <div class="flex items-center mb-4">
+              <div class="icon-circle">
+                <i class="fas fa-microchip text-white text-2xl"></i>
+              </div>
+              <h2 class="text-2xl font-semibold ml-4 text-cyan-300">
+                MicroLED Integration
+              </h2>
+            </div>
+            <ul class="space-y-3 ml-4">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span>Quantum dots combined with MicroLED technology</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span>Self-lighting pixels without degradation</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span>Modular, flexible screen designs</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span>Enhanced brightness and power efficiency</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-cyan-300 mt-1 mr-2"></i>
+                <span>Longer lifespans than current display technologies</span>
+              </li>
+            </ul>
+            <div class="mt-4 text-center">
+              <img
+                alt="MicroLED technology concept"
+                class="rounded-lg mx-auto h-28 object-cover"
+                src="https://www.genspark.ai/image_placeholder.png"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Bottom section - Key takeaway -->
+        <div
+          class="mt-8 p-4 bg-cyan-900 bg-opacity-30 rounded-lg border-l-4 border-cyan-400"
+        >
+          <p class="text-lg font-medium">
+            <i class="fas fa-lightbulb text-yellow-300 mr-2"></i>
+            QLED technology continues evolving toward display systems that
+            combine the best of all worlds: QLED's brightness and color
+            accuracy, OLED's contrast levels, and MicroLED's durability and
+            efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

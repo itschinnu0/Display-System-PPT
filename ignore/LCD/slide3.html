@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties and Applications of LCDs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a2332 0%, #2d3e50 50%, #1a2738 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 40px;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            max-width: 1800px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            background: linear-gradient(90deg, #00d4ff, #00ffff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+            animation: slideInDown 0.8s ease-out;
+            letter-spacing: 1px;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 30px;
+            text-align: left;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #00d4ff, transparent);
+            border-radius: 2px;
+        }
+
+        .properties-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .property-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 18px;
+            background: rgba(30, 50, 80, 0.4);
+            border-left: 3px solid rgba(0, 212, 255, 0.6);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.6s ease-out backwards;
+        }
+
+        .property-item:nth-child(1) { animation-delay: 0.1s; }
+        .property-item:nth-child(2) { animation-delay: 0.2s; }
+        .property-item:nth-child(3) { animation-delay: 0.3s; }
+        .property-item:nth-child(4) { animation-delay: 0.4s; }
+        .property-item:nth-child(5) { animation-delay: 0.5s; }
+        .property-item:nth-child(6) { animation-delay: 0.6s; }
+        .property-item:nth-child(7) { animation-delay: 0.7s; }
+        .property-item:nth-child(8) { animation-delay: 0.8s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .property-item:hover {
+            background: rgba(30, 50, 80, 0.7);
+            border-left-color: #00d4ff;
+            transform: translateX(5px);
+        }
+
+        .property-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00d4ff;
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
+        }
+
+        .property-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e0e8f0;
+        }
+
+        .property-text strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .applications-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .application-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .application-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 16px;
+            background: rgba(30, 50, 80, 0.4);
+            border-left: 3px solid rgba(0, 212, 255, 0.6);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            animation: slideInRight 0.6s ease-out backwards;
+        }
+
+        .application-item:nth-child(1) { animation-delay: 0.1s; }
+        .application-item:nth-child(2) { animation-delay: 0.2s; }
+        .application-item:nth-child(3) { animation-delay: 0.3s; }
+        .application-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .application-item:hover {
+            background: rgba(30, 50, 80, 0.7);
+            border-left-color: #00d4ff;
+            transform: translateX(-5px);
+        }
+
+        .application-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00d4ff;
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
+        }
+
+        .application-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e0e8f0;
+        }
+
+        .application-text strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .device-card {
+            background: rgba(20, 40, 70, 0.5);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s ease;
+            animation: scaleIn 0.6s ease-out backwards;
+        }
+
+        .device-card:nth-child(1) { animation-delay: 0.5s; }
+        .device-card:nth-child(2) { animation-delay: 0.6s; }
+        .device-card:nth-child(3) { animation-delay: 0.7s; }
+        .device-card:nth-child(4) { animation-delay: 0.8s; }
+        .device-card:nth-child(5) { animation-delay: 0.9s; }
+        .device-card:nth-child(6) { animation-delay: 1s; }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .device-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            border-color: #00d4ff;
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.3);
+            background: rgba(20, 40, 70, 0.8);
+        }
+
+        .device-icon {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.6));
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .device-card:nth-child(2) .device-icon { animation-delay: 0.3s; }
+        .device-card:nth-child(3) .device-icon { animation-delay: 0.6s; }
+        .device-card:nth-child(4) .device-icon { animation-delay: 0.9s; }
+        .device-card:nth-child(5) .device-icon { animation-delay: 1.2s; }
+        .device-card:nth-child(6) .device-icon { animation-delay: 1.5s; }
+
+        .device-label {
+            font-size: 0.9rem;
+            color: #b8d9f0;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .decorative-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            50% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
+        }
+
+        @media (max-width: 1400px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .device-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .device-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="slide-title">Properties and Applications of LCDs</h1>
+
+        <div class="main-content">
+            <!-- Properties Column -->
+            <div class="column">
+                <h2 class="section-title">Properties</h2>
+                <div class="properties-list">
+                    <div class="property-item">
+                        <div class="property-icon">📱</div>
+                        <div class="property-text">
+                            <strong>Thin and Lightweight</strong> — Compact design, easy to integrate
+                        </div>
+                    </div>
+
+                    <div class="property-item">
+                        <div class="property-icon">⚡</div>
+                        <div class="property-text">
+                            <strong>Low Power Consumption</strong> — Efficient compared to CRTs
+                        </div>
+                    </div>
+
+                    <div class="property-item">
+                        <div class="property-icon">💻</div>
+                        <div class="property-text">
+                            <strong>Flat Panel Technology</strong> — Sleek and modern screens
+                        </div>
+                    </div>
+
+                    <div class="property-item">
+                        <div class="property-icon">🎯</div>
+                        <div class="property-text">
+                            <strong>Good Resolution</strong> — Clear and sharp images
+                        </div>
+                    </div>
+
+                    <div class="property-item">
+                        <div class="property-icon">🌗</div>
+                        <div class="property-text">
+                            <strong>Adjustable Brightness & Contrast</strong> — Though limited vs OLEDs
+                        </div>
+                    </div>
+
+                    <div class="property-item">
+                        <div class="property-icon">👁️</div>
+                        <div class="property-text">
+                            <strong>Viewing Angle Limitation</strong> — Quality may reduce from sides
+                        </div>
+                    </div>
+
+                    <div class="property-item">
+                        <div class="property-icon">⏱️</div>
+                        <div class="property-text">
+                            <strong>Response Time</strong> — Moderate; slower than OLED/QLED
+                        </div>
+                    </div>
+
+                    <div class="property-item">
+                        <div class="property-icon">💡</div>
+                        <div class="property-text">
+                            <strong>Backlight Requirement</strong> — Needs external light source
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications Column -->
+            <div class="column">
+                <h2 class="section-title">Applications</h2>
+                <div class="applications-content">
+                    <div class="application-list">
+                        <div class="application-item">
+                            <div class="application-icon">🖥️</div>
+                            <div class="application-text">
+                                <strong>Display Devices</strong> — TVs, monitors, smartphones
+                            </div>
+                        </div>
+
+                        <div class="application-item">
+                            <div class="application-icon">📊</div>
+                            <div class="application-text">
+                                <strong>Measuring Instruments</strong> — Digital watches, multimeters
+                            </div>
+                        </div>
+
+                        <div class="application-item">
+                            <div class="application-icon">💊</div>
+                            <div class="application-text">
+                                <strong>Medical Equipment</strong> — Portable displays, diagnostic devices
+                            </div>
+                        </div>
+
+                        <div class="application-item">
+                            <div class="application-icon">🔋</div>
+                            <div class="application-text">
+                                <strong>Battery-operated Devices</strong> — Energy efficient solutions
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="device-grid">
+                        <div class="device-card">
+                            <div class="device-icon">🖥️</div>
+                            <div class="device-label">Monitors</div>
+                        </div>
+
+                        <div class="device-card">
+                            <div class="device-icon">📱</div>
+                            <div class="device-label">Smartphones</div>
+                        </div>
+
+                        <div class="device-card">
+                            <div class="device-icon">🧮</div>
+                            <div class="device-label">Calculators</div>
+                        </div>
+
+                        <div class="device-card">
+                            <div class="device-icon">⌚</div>
+                            <div class="device-label">Digital Watches</div>
+                        </div>
+
+                        <div class="device-card">
+                            <div class="device-icon">🏥</div>
+                            <div class="device-label">Medical Displays</div>
+                        </div>
+
+                        <div class="device-card">
+                            <div class="device-icon">🚗</div>
+                            <div class="device-label">Vehicle Displays</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="decorative-dots">
+        <div class="dot" style="top: 15%; right: 20%; animation-delay: 0s;"></div>
+        <div class="dot" style="top: 25%; right: 45%; animation-delay: 1s;"></div>
+        <div class="dot" style="top: 60%; right: 15%; animation-delay: 2s;"></div>
+        <div class="dot" style="top: 75%; right: 55%; animation-delay: 1.5s;"></div>
+        <div class="dot" style="top: 35%; left: 15%; animation-delay: 0.5s;"></div>
+        <div class="dot" style="top: 50%; left: 35%; animation-delay: 2.5s;"></div>
+        <div class="dot" style="top: 80%; left: 25%; animation-delay: 1.8s;"></div>
+        <div class="dot" style="top: 20%; left: 50%; animation-delay: 0.8s;"></div>
+    </div>
+</body>
+</html>

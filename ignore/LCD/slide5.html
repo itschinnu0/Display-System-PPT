@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Do Liquid Crystals Actually Work?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4a 50%, #0d1b2e 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 50px;
+        }
+
+        .slide-container {
+            max-width: 1800px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #00d4ff, #00ffff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-box {
+            background: rgba(20, 40, 70, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+            animation: slideInUp 0.8s ease-out backwards;
+        }
+
+        .content-box:nth-child(1) { animation-delay: 0.2s; }
+        .content-box:nth-child(2) { animation-delay: 0.4s; }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .box-header {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .visual-demo {
+            background: rgba(10, 30, 60, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            height: 200px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .molecules-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .molecule {
+            width: 4px;
+            height: 80px;
+            background: linear-gradient(180deg, #00d4ff, #0080ff);
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+        }
+
+        .twisted .molecule {
+            animation: twist 3s ease-in-out infinite;
+        }
+
+        .aligned .molecule {
+            animation: align 3s ease-in-out infinite;
+        }
+
+        @keyframes twist {
+            0%, 100% { transform: rotate(-20deg); opacity: 0.7; }
+            50% { transform: rotate(20deg); opacity: 1; }
+        }
+
+        @keyframes align {
+            0%, 100% { transform: rotate(0deg); opacity: 1; }
+            50% { transform: rotate(0deg); opacity: 0.8; }
+        }
+
+        .molecule:nth-child(1) { animation-delay: 0s; }
+        .molecule:nth-child(2) { animation-delay: 0.1s; }
+        .molecule:nth-child(3) { animation-delay: 0.2s; }
+        .molecule:nth-child(4) { animation-delay: 0.3s; }
+        .molecule:nth-child(5) { animation-delay: 0.4s; }
+
+        .state-label {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 212, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #00d4ff;
+            border: 1px solid rgba(0, 212, 255, 0.4);
+        }
+
+        .content-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #b8d9f0;
+            margin-bottom: 15px;
+        }
+
+        .content-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .full-width-section {
+            background: rgba(20, 40, 70, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 35px 45px;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+            animation: slideInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .highlight-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #ffffff;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 100, 150, 0.3), rgba(0, 150, 200, 0.3));
+            padding: 25px 35px;
+            border-radius: 12px;
+            border-left: 4px solid #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="slide-title">How Do Liquid Crystals Actually Work?</h1>
+
+        <div class="content-grid">
+            <div class="content-box">
+                <h2 class="box-header">Natural State</h2>
+                <div class="visual-demo">
+                    <span class="state-label">NO VOLTAGE</span>
+                    <div class="molecules-container twisted">
+                        <div class="molecule"></div>
+                        <div class="molecule"></div>
+                        <div class="molecule"></div>
+                        <div class="molecule"></div>
+                        <div class="molecule"></div>
+                    </div>
+                </div>
+                <p>In their natural state, these molecules twist light as it passes through, making the screen appear bright.</p>
+            </div>
+
+            <div class="content-box">
+                <h2 class="box-header">Voltage Applied</h2>
+                <div class="visual-demo">
+                    <span class="state-label">VOLTAGE ON</span>
+                    <div class="molecules-container aligned">
+                        <div class="molecule"></div>
+                        <div class="molecule"></div>
+                        <div class="molecule"></div>
+                        <div class="molecule"></div>
+                        <div class="molecule"></div>
+                    </div>
+                </div>
+                <p>When voltage is applied, they align perfectly — blocking or changing the light's direction.</p>
+            </div>
+        </div>
+
+        <div class="full-width-section">
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #b8d9f0; margin-bottom: 20px;">The magic behind every LCD screen lies in how liquid crystal molecules respond to electric fields. This switching happens thousands of times per second, creating the pixels, images, and motion we see.</p>
+            
+            <div class="highlight-text">
+                <strong>What's truly impressive</strong> is how this blends optics, physics, and electronics — showing how a microscopic dance of molecules becomes the display of your phone, TV, or even smartwatch!
+            </div>
+        </div>
+    </div>
+</body>
+</html>

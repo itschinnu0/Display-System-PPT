@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Greener Screens: Environmental Impact</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .slide-container {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #051c2c;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+      }
+      .content-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        animation: fadeInDown 1.2s ease-out;
+      }
+      .content-subtitle {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .qled-accent {
+        color: #00b2e3;
+      }
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 28, 44, 0.85);
+        z-index: -1;
+      }
+      .tech-circle {
+        position: absolute;
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .tech-circle-1 {
+        width: 400px;
+        height: 400px;
+        right: -100px;
+        top: -100px;
+        animation: pulse 8s infinite alternate;
+      }
+      .tech-circle-2 {
+        width: 300px;
+        height: 300px;
+        left: -80px;
+        bottom: -100px;
+        animation: pulse 12s infinite alternate-reverse;
+      }
+      .eco-card {
+        background-color: rgba(0, 40, 70, 0.5);
+        border-left: 3px solid #00b2e3;
+        border-radius: 4px;
+        padding: 20px;
+        margin-bottom: 20px;
+        animation: slideInRight 0.8s ease-out;
+      }
+      .eco-icon {
+        font-size: 28px;
+        color: #00b2e3;
+        margin-right: 16px;
+      }
+      .eco-stat {
+        font-size: 32px;
+        font-weight: 700;
+        color: #00b2e3;
+        margin-bottom: 5px;
+        animation: countUp 2s ease-out forwards;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes countUp {
+        from {
+          opacity: 0.5;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col">
+      <div class="background-overlay"></div>
+      <div class="tech-circle tech-circle-1"></div>
+      <div class="tech-circle tech-circle-2"></div>
+      <!-- Header section with title -->
+      <div class="px-16 pt-10">
+        <h1 class="content-title text-4xl mb-2">
+          Greener Screens: <span class="qled-accent">Environmental Impact</span>
+        </h1>
+        <p class="content-subtitle text-lg text-gray-300 mb-6">
+          How QLED technology delivers sustainable display solutions with
+          reduced environmental footprint
+        </p>
+      </div>
+      <!-- Content section -->
+      <div class="flex-grow px-16 py-4">
+        <div class="grid grid-cols-2 gap-6">
+          <!-- Left column -->
+          <div>
+            <div class="eco-card delay-100 flex items-start">
+              <div class="eco-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Cadmium-Free Innovation</h3>
+                <p class="text-gray-300">
+                  Samsung's indium phosphide (InP) quantum dots eliminate toxic
+                  heavy metals while maintaining performance
+                </p>
+              </div>
+            </div>
+            <div class="eco-card delay-200 flex items-start">
+              <div class="eco-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Energy Efficiency</h3>
+                <div class="eco-stat">40%</div>
+                <p class="text-gray-300">
+                  Better energy efficiency than conventional LCD displays, with
+                  significant power savings in typical viewing conditions
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Right column -->
+          <div>
+            <div class="eco-card delay-300 flex items-start">
+              <div class="eco-icon">
+                <i class="fas fa-recycle"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Reduced Waste</h3>
+                <p class="text-gray-300">
+                  Longer operational lifespan means fewer replacements, reducing
+                  electronic waste in landfills
+                </p>
+              </div>
+            </div>
+            <div class="eco-card delay-400 flex items-start">
+              <div class="eco-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Regulatory Compliance</h3>
+                <p class="text-gray-300">
+                  Meets international environmental standards including RoHS
+                  directive with eco-friendly materials
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer section -->
+      <div class="px-16 py-6 mb-4">
+        <p class="content-subtitle text-center">
+          <span class="qled-accent font-semibold"
+            >"The sustainable choice"</span
+          >
+          - QLED combines exceptional performance with environmental
+          responsibility
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

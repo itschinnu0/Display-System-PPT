@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>QLED vs OLED: Performance Comparison</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: "Montserrat", sans-serif;
+      }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        position: relative;
+        background-color: #0a192f;
+        overflow: hidden;
+      }
+      .circuit-pattern {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.15;
+        z-index: 1;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 5;
+      }
+      .title-content {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-in-out forwards;
+      }
+      .chart-container {
+        background-color: rgba(10, 25, 47, 0.7);
+        border-radius: 8px;
+        border: 1px solid rgba(100, 255, 218, 0.3);
+        padding: 20px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-in-out forwards;
+        animation-delay: 0.3s;
+      }
+      .feature-comparison {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-in-out forwards;
+        animation-delay: 0.9s;
+      }
+      .metric-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        opacity: 0;
+        animation: slideRight 0.5s ease-in-out forwards;
+      }
+      .metric-1 {
+        animation-delay: 1s;
+      }
+      .metric-2 {
+        animation-delay: 1.1s;
+      }
+      .metric-3 {
+        animation-delay: 1.2s;
+      }
+      .metric-4 {
+        animation-delay: 1.3s;
+      }
+      .metric-5 {
+        animation-delay: 1.4s;
+      }
+      .metric-6 {
+        animation-delay: 1.5s;
+      }
+      .metric-7 {
+        animation-delay: 1.6s;
+      }
+      .metric-8 {
+        animation-delay: 1.7s;
+      }
+      .metric-9 {
+        animation-delay: 1.8s;
+      }
+
+      .metric-label {
+        width: 150px;
+        text-align: right;
+        margin-right: 15px;
+        font-size: 14px;
+      }
+
+      .bar-container {
+        flex-grow: 1;
+        height: 24px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        position: relative;
+      }
+
+      .qled-bar,
+      .oled-bar {
+        height: 100%;
+        border-radius: 12px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 1.2s ease-in-out;
+      }
+
+      .qled-bar {
+        background-color: rgba(6, 182, 212, 0.8);
+      }
+
+      .oled-bar {
+        background-color: rgba(236, 72, 153, 0.8);
+      }
+
+      .score-value {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+      }
+
+      .legend-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 10px;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+      }
+
+      .legend-color {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        margin-right: 8px;
+      }
+
+      .qled-legend {
+        background-color: rgba(6, 182, 212, 0.8);
+      }
+
+      .oled-legend {
+        background-color: rgba(236, 72, 153, 0.8);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideRight {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="slide-container flex flex-col items-center text-white relative overflow-hidden"
+    >
+      <!-- Circuit pattern background -->
+      <div class="circuit-pattern">
+        <svg
+          height="100%"
+          viewbox="0 0 1280 720"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <pattern
+            height="100"
+            id="circuit"
+            patternunits="userSpaceOnUse"
+            width="100"
+          >
+            <path
+              d="M20 10 L80 10 L80 20 L90 20 L90 80 L80 80 L80 90 L20 90 L20 80 L10 80 L10 20 L20 20 Z"
+              fill="none"
+              stroke="#0284c7"
+              stroke-width="1"
+            ></path>
+            <path
+              d="M30 30 L70 30 L70 70 L30 70 Z"
+              fill="none"
+              stroke="#0284c7"
+              stroke-width="1"
+            ></path>
+            <circle
+              cx="50"
+              cy="50"
+              fill="none"
+              r="10"
+              stroke="#0284c7"
+              stroke-width="1"
+            ></circle>
+            <line
+              stroke="#0284c7"
+              stroke-width="1"
+              x1="0"
+              x2="10"
+              y1="50"
+              y2="50"
+            ></line>
+            <line
+              stroke="#0284c7"
+              stroke-width="1"
+              x1="90"
+              x2="100"
+              y1="50"
+              y2="50"
+            ></line>
+            <line
+              stroke="#0284c7"
+              stroke-width="1"
+              x1="50"
+              x2="50"
+              y1="0"
+              y2="10"
+            ></line>
+            <line
+              stroke="#0284c7"
+              stroke-width="1"
+              x1="50"
+              x2="50"
+              y1="90"
+              y2="100"
+            ></line>
+          </pattern>
+          <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+        </svg>
+      </div>
+      <!-- Content wrapper -->
+      <div class="content-wrapper w-full h-full flex flex-col px-10 py-8">
+        <!-- Title -->
+        <div class="title-content mb-6">
+          <h1 class="text-4xl font-bold text-center">
+            <span class="text-cyan-400">QLED vs OLED</span>
+            <span class="text-white">: Performance Comparison</span>
+          </h1>
+        </div>
+        <!-- Chart container -->
+        <div class="chart-container mx-auto w-full max-w-4xl">
+          <div class="performance-chart">
+            <!-- Performance metrics -->
+            <div class="metric-row metric-1">
+              <div class="metric-label">Gaming Performance</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 70%"></div>
+                <div class="oled-bar" style="width: 90%"></div>
+                <div class="score-value">9/10</div>
+              </div>
+            </div>
+            <div class="metric-row metric-2">
+              <div class="metric-label">Lifespan</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 80%"></div>
+                <div class="oled-bar" style="width: 60%"></div>
+                <div class="score-value">8/10</div>
+              </div>
+            </div>
+            <div class="metric-row metric-3">
+              <div class="metric-label">Cost Effectiveness</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 90%"></div>
+                <div class="oled-bar" style="width: 60%"></div>
+                <div class="score-value">9/10</div>
+              </div>
+            </div>
+            <div class="metric-row metric-4">
+              <div class="metric-label">Burn Resistance</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 80%"></div>
+                <div class="oled-bar" style="width: 40%"></div>
+                <div class="score-value">8/10</div>
+              </div>
+            </div>
+            <div class="metric-row metric-5">
+              <div class="metric-label">View Angles</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 60%"></div>
+                <div class="oled-bar" style="width: 80%"></div>
+                <div class="score-value">8/10</div>
+              </div>
+            </div>
+            <div class="metric-row metric-6">
+              <div class="metric-label">Energy Efficiency</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 70%"></div>
+                <div class="oled-bar" style="width: 80%"></div>
+                <div class="score-value">8/10</div>
+              </div>
+            </div>
+            <div class="metric-row metric-7">
+              <div class="metric-label">Black Levels</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 60%"></div>
+                <div class="oled-bar" style="width: 100%"></div>
+                <div class="score-value">10/10</div>
+              </div>
+            </div>
+            <div class="metric-row metric-8">
+              <div class="metric-label">Color Accuracy</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 75%"></div>
+                <div class="oled-bar" style="width: 80%"></div>
+                <div class="score-value">8/10</div>
+              </div>
+            </div>
+            <div class="metric-row metric-9">
+              <div class="metric-label">Peak Brightness</div>
+              <div class="bar-container">
+                <div class="qled-bar" style="width: 100%"></div>
+                <div class="oled-bar" style="width: 70%"></div>
+                <div class="score-value">10/10</div>
+              </div>
+            </div>
+            <!-- Legend -->
+            <div class="legend-container">
+              <div class="legend-item">
+                <div class="legend-color qled-legend"></div>
+                <span>QLED Technology</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color oled-legend"></div>
+                <span>OLED Technology</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Feature comparison -->
+        <div class="feature-comparison mt-6 mx-auto w-full max-w-4xl">
+          <div class="bg-opacity-30 bg-gray-900 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold text-cyan-300 mb-2">
+              Key Differences
+            </h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <h4 class="text-cyan-400 font-semibold">QLED Advantages</h4>
+                <ul class="text-gray-200 space-y-1 list-disc pl-5">
+                  <li>Exceptional brightness (4,000+ nits vs 2,400 nits)</li>
+                  <li>No burn-in problems</li>
+                  <li>Better for bright rooms</li>
+                  <li>More affordable</li>
+                  <li>Available in larger sizes</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-pink-400 font-semibold">OLED Advantages</h4>
+                <ul class="text-gray-200 space-y-1 list-disc pl-5">
+                  <li>Perfect blacks (infinite contrast)</li>
+                  <li>Superior gaming response times</li>
+                  <li>Better viewing angles</li>
+                  <li>More energy efficient in dark content</li>
+                  <li>Thinner display profiles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Screens – The Future of Liquid Crystals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4a 50%, #0d1b2e 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 50px;
+        }
+
+        .slide-container {
+            max-width: 1800px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-title {
+            text-align: center;
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #00d4ff, #00ffff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .future-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .future-card {
+            background: rgba(20, 40, 70, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+            transition: all 0.4s ease;
+            animation: slideInUp 0.8s ease-out backwards;
+        }
+
+        .future-card:nth-child(1) { animation-delay: 0.2s; }
+        .future-card:nth-child(2) { animation-delay: 0.4s; }
+        .future-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .future-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.8);
+            box-shadow: 0 12px 48px rgba(0, 212, 255, 0.3);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(0, 100, 150, 0.4), rgba(0, 150, 200, 0.4));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.6); }
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #b8d9f0;
+            text-align: center;
+        }
+
+        .conclusion-section {
+            background: rgba(20, 40, 70, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 18px;
+            padding: 35px 45px;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+            animation: slideInUp 0.8s ease-out 0.8s backwards;
+            text-align: center;
+        }
+
+        .conclusion-section p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(0, 100, 150, 0.3), rgba(0, 150, 200, 0.3));
+            padding: 30px 40px;
+            border-radius: 12px;
+            border-left: 4px solid #00d4ff;
+            font-weight: 500;
+        }
+
+        .conclusion-section p strong {
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="slide-title">Beyond Screens – The Future of Liquid Crystals</h1>
+
+        <div class="future-cards">
+            <div class="future-card">
+                <div class="card-icon">🪟</div>
+                <h3 class="card-title">Smart Windows</h3>
+                <p class="card-description">Glass that automatically adjusts transparency based on sunlight, reducing energy use and providing adaptive shading for buildings.</p>
+            </div>
+
+            <div class="future-card">
+                <div class="card-icon">🧬</div>
+                <h3 class="card-title">Bio-Sensing Films</h3>
+                <p class="card-description">Medical films made of liquid crystals that can detect diseases by changing color when exposed to certain chemicals in the body.</p>
+            </div>
+
+            <div class="future-card">
+                <div class="card-icon">🤖</div>
+                <h3 class="card-title">Artificial Muscles</h3>
+                <p class="card-description">LC-based materials that can move and respond to heat or light — potentially used in robotics or prosthetic devices.</p>
+            </div>
+        </div>
+
+        <div class="conclusion-section">
+            <p>The future of liquid crystals isn't limited to screens; it's about <strong>materials that are alive, adaptive, and intelligent</strong> — shaping how we live and interact with technology.</p>
+        </div>
+    </div>
+</body>
+</html>

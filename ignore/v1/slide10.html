@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>QLED Future Developments</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .slide-container {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #051c2c;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+      }
+      .content-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        animation: fadeInDown 1.2s ease-out;
+      }
+      .content-subtitle {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .qled-accent {
+        color: #00b2e3;
+      }
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 28, 44, 0.85);
+        z-index: -1;
+      }
+      .tech-circle {
+        position: absolute;
+        border: 1px solid rgba(0, 178, 227, 0.3);
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .tech-circle-1 {
+        width: 400px;
+        height: 400px;
+        right: -100px;
+        top: -100px;
+        animation: pulse 8s infinite alternate;
+      }
+      .tech-circle-2 {
+        width: 300px;
+        height: 300px;
+        left: -80px;
+        bottom: -100px;
+        animation: pulse 12s infinite alternate-reverse;
+      }
+      .tech-card {
+        background-color: rgba(0, 40, 70, 0.5);
+        border-left: 3px solid #00b2e3;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        animation: slideInRight 0.8s ease-out;
+      }
+      .tech-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 178, 227, 0.2);
+      }
+      .tech-icon {
+        background-color: rgba(0, 178, 227, 0.15);
+        color: #00b2e3;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        animation: zoomIn 0.5s ease-out;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col">
+      <div class="background-overlay"></div>
+      <div class="tech-circle tech-circle-1"></div>
+      <div class="tech-circle tech-circle-2"></div>
+      <!-- Header section with title -->
+      <div class="px-16 pt-10">
+        <h1 class="content-title text-4xl mb-2">
+          Evolution: <span class="qled-accent">What's Next for QLED?</span>
+        </h1>
+        <p class="content-subtitle text-lg text-gray-300 mb-6">
+          The future of display technology through emerging QLED innovations
+        </p>
+      </div>
+      <!-- Future technologies grid -->
+      <div class="flex-grow px-16 py-4">
+        <div class="grid grid-cols-3 gap-6">
+          <!-- Self-emissive QLED -->
+          <div class="tech-card p-6 delay-100">
+            <div class="tech-icon">
+              <i class="fas fa-lightbulb text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 qled-accent">
+              Self-Emissive QLED
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Electroluminescent quantum dots that emit light directly when
+              current is applied
+            </p>
+            <ul class="text-sm text-gray-300">
+              <li class="mb-2 flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>No backlight needed</span>
+              </li>
+              <li class="mb-2 flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>OLED-like perfect blacks</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>Faster response times</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Neo QLED -->
+          <div class="tech-card p-6 delay-200">
+            <div class="tech-icon">
+              <i class="fas fa-microchip text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 qled-accent">Neo QLED</h3>
+            <p class="text-gray-300 mb-4">
+              Integration of quantum dots with mini-LED backlighting technology
+            </p>
+            <ul class="text-sm text-gray-300">
+              <li class="mb-2 flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>LEDs 1/40th of conventional size</span>
+              </li>
+              <li class="mb-2 flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>Quantum Matrix Technology</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>Precise backlight control</span>
+              </li>
+            </ul>
+          </div>
+          <!-- MicroLED Integration -->
+          <div class="tech-card p-6 delay-300">
+            <div class="tech-icon">
+              <i class="fas fa-layer-group text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 qled-accent">
+              MicroLED Hybrid
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Future quantum dots integration with modular MicroLED technology
+            </p>
+            <ul class="text-sm text-gray-300">
+              <li class="mb-2 flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>Self-emissive without degradation</span>
+              </li>
+              <li class="mb-2 flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>Modular, scalable designs</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span>Revolutionary form factors</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Future possibilities section -->
+        <div class="mt-8">
+          <div class="tech-card p-6 delay-400">
+            <h3 class="text-xl font-semibold mb-3 qled-accent">
+              Future Display Vision
+            </h3>
+            <div class="flex">
+              <div class="w-1/2 pr-4">
+                <p class="text-gray-300 mb-3">
+                  Next-generation displays will combine the best attributes of
+                  all technologies:
+                </p>
+                <ul class="text-sm text-gray-300">
+                  <li class="mb-2 flex items-start">
+                    <span class="text-cyan-400 mr-2">•</span>
+                    <span>OLED-like perfect blacks</span>
+                  </li>
+                  <li class="mb-2 flex items-start">
+                    <span class="text-cyan-400 mr-2">•</span>
+                    <span>QLED brightness advantages</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-400 mr-2">•</span>
+                    <span>MicroLED durability</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-1/2 pl-4 border-l border-cyan-800">
+                <p class="text-gray-300 mb-3">
+                  Emerging applications and form factors:
+                </p>
+                <ul class="text-sm text-gray-300">
+                  <li class="mb-2 flex items-start">
+                    <span class="text-cyan-400 mr-2">•</span>
+                    <span>Transparent and flexible displays</span>
+                  </li>
+                  <li class="mb-2 flex items-start">
+                    <span class="text-cyan-400 mr-2">•</span>
+                    <span>AR/VR micro-displays</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-400 mr-2">•</span>
+                    <span>Modular wall-sized screens</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer section -->
+      <div class="px-16 py-4 mb-2">
+        <p class="content-subtitle text-sm text-gray-400 text-center">
+          QLED technology continues to evolve, powering the next generation of
+          display innovations
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

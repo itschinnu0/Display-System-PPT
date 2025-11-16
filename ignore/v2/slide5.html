@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0a192f;
+        font-family: "Roboto", sans-serif;
+        color: white;
+        min-height: 100vh;
+        width: 100vw;
+      }
+      .slide-container {
+        width: 100%;
+        min-height: 100%;
+        position: relative;
+      }
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.15;
+      }
+      .title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: #68d1ee;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        display: inline-block;
+      }
+      .content {
+        margin-top: 10px;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+      .quantum-dot {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      }
+      .dot-small {
+        width: 80px;
+        height: 80px;
+        background-color: #3b82f6;
+        animation: pulse-blue 3s infinite alternate;
+      }
+      .dot-medium {
+        width: 120px;
+        height: 120px;
+        background-color: #10b981;
+        animation: pulse-green 3s infinite alternate;
+      }
+      .dot-large {
+        width: 160px;
+        height: 160px;
+        background-color: #ef4444;
+        animation: pulse-red 3s infinite alternate;
+      }
+      .arrow {
+        font-size: 40px;
+        color: #64748b;
+        animation: fade-in-out 2s infinite;
+      }
+      @keyframes pulse-blue {
+        0% {
+          box-shadow: 0 0 10px 5px rgba(59, 130, 246, 0.6);
+          opacity: 0.5;
+        }
+        100% {
+          box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0.8);
+          opacity: 1;
+        }
+      }
+      @keyframes pulse-green {
+        0% {
+          box-shadow: 0 0 10px 5px rgba(16, 185, 129, 0.6);
+          opacity: 0.5;
+        }
+        100% {
+          box-shadow: 0 0 20px 10px rgba(16, 185, 129, 0.8);
+          opacity: 1;
+        }
+      }
+      @keyframes pulse-red {
+        0% {
+          box-shadow: 0 0 10px 5px rgba(239, 68, 68, 0.6);
+          opacity: 0.5;
+        }
+        100% {
+          box-shadow: 0 0 20px 10px rgba(239, 68, 68, 0.8);
+          opacity: 1;
+        }
+      }
+      @keyframes fade-in-out {
+        0%,
+        100% {
+          opacity: 0.4;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      .circuit-pattern {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.05;
+        background-image: url("https://www.genspark.ai/image_placeholder.png");
+        background-repeat: repeat;
+        background-size: 800px;
+      }
+      .dot-label {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 10px;
+        color: #e2e8f0;
+      }
+      .size-label {
+        text-align: center;
+        font-size: 18px;
+        color: #94a3b8;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container p-12">
+      <div class="circuit-pattern"></div>
+      <h1 class="title">Quantum Confinement Effect</h1>
+      <div class="content mb-10">
+        <p>The key science behind QLED is remarkably simple:</p>
+        <p class="font-semibold mt-2">
+          The size of quantum dots precisely determines what color they produce:
+        </p>
+      </div>
+      <div class="flex justify-between items-center mt-12">
+        <div class="w-1/3 text-center">
+          <div class="quantum-dot dot-small"></div>
+          <div class="dot-label">Blue Light</div>
+          <div class="size-label">Smaller Dots (2-4nm)</div>
+        </div>
+        <div class="w-1/3 text-center">
+          <div class="quantum-dot dot-medium"></div>
+          <div class="dot-label">Green Light</div>
+          <div class="size-label">Medium Dots (4-6nm)</div>
+        </div>
+        <div class="w-1/3 text-center">
+          <div class="quantum-dot dot-large"></div>
+          <div class="dot-label">Red Light</div>
+          <div class="size-label">Larger Dots (6-10nm)</div>
+        </div>
+      </div>
+      <div class="mt-12 text-center">
+        <p class="text-xl text-teal-300 font-medium">
+          This precision allows manufacturers to create any color by controlling
+          the quantum dot size
+        </p>
+        <p class="text-lg text-gray-400 mt-2">
+          Enabling 100% color volume and unprecedented color accuracy
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
